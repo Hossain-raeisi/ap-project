@@ -3,17 +3,27 @@ package front.app.views;
 import front.Config;
 import front.commons.data_class.AttachmentData;
 import front.services.util.EducationalContent;
+import front.services.util.EducationalContentItem;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 
+import java.util.UUID;
+
 public class EducationalContentItemView extends Pane {
+    UUID educationalContentId;
+    UUID attachmentId;
+
     Label text  = new Label();
     Button deleteButton = new Button();
     Button changeButton = new Button();
 
-    public EducationalContentItemView(AttachmentData attachmentData, front.services.util.EducationalContent.UserType userType){
+    public EducationalContentItemView(UUID educationalContentId, AttachmentData attachmentData, front.services.util.EducationalContent.UserType userType){
+        this.educationalContentId = educationalContentId;
+        attachmentId = attachmentData.id;
+
         setPrefWidth(1000);
         setPrefHeight(50);
 
@@ -28,7 +38,7 @@ public class EducationalContentItemView extends Pane {
         setButtonsVisibility(userType);
     }
 
-    public EducationalContentItemView(String itemText, front.services.util.EducationalContent.UserType userType){
+    public EducationalContentItemView(UUID educationalContentId, String itemText, front.services.util.EducationalContent.UserType userType){
         setPrefWidth(1000);
         setPrefHeight(50);
 
@@ -58,8 +68,23 @@ public class EducationalContentItemView extends Pane {
         changeButton.setLayoutX(570);
         changeButton.setLayoutY(10);
 
+        changeButton.setOnAction(this::changeButtonAction);
+        deleteButton.setOnAction(this::deleteButtonAction);
+
         deleteButton.setVisible(userType == front.services.util.EducationalContent.UserType.professor);
         changeButton.setVisible(userType != front.services.util.EducationalContent.UserType.other);
+    }
+
+    public void changeButtonAction(ActionEvent actionEvent){
+        if (attachmentId != null)
+            EducationalContentItem.showUpdateItemPage(educationalContentId, attachmentId);
+        EducationalContentItem.showUpdateItemPage(educationalContentId, text.getText());
+    }
+
+    public void deleteButtonAction(ActionEvent actionEvent){
+        if (attachmentId != null)
+            EducationalContentItem.deleteItem(educationalContentId, attachmentId);
+        EducationalContentItem.deleteItem(educationalContentId, text.getText());
     }
 
 }

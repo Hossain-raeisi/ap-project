@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.EducationalContentItem">
+
+    <fx:include source="header.fxml" />
+   <TextArea fx:id="textField" layoutX="56.0" layoutY="185.0" prefHeight="252.0" prefWidth="883.0" promptText="text" />
+   <Button fx:id="setTextButton" layoutX="56.0" layoutY="444.0" mnemonicParsing="false" onAction="#setTextButtonAction" text="set text" />
+   <TextField fx:id="filePathField" layoutX="56.0" layoutY="516.0" prefHeight="24.0" prefWidth="883.0" promptText="file absolute path" />
+   <Button fx:id="setMediaButton" layoutX="56.0" layoutY="545.0" mnemonicParsing="false" onAction="#setMediaButtonAction" text="set media" />
+
+</AnchorPane>

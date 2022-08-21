@@ -33,8 +33,8 @@ public class EducationalContent {
         if (!Client.getInstance().getCurrentUserData().id.equals(client.getCourseData(educationalContentData.courseId).professorId))
             deleteButton.setVisible(false);
 
-        itemsList.getItems().addAll(educationalContentData.texts.stream().map(text -> new EducationalContentItemView(text, userType)).toList());
-        itemsList.getItems().addAll(educationalContentData.attachmentsId.stream().map(client::getAttachmentData).map(attachmentData -> new EducationalContentItemView(attachmentData, userType)).toList());
+        itemsList.getItems().addAll(educationalContentData.texts.stream().map(text -> new EducationalContentItemView(educationalContentId, text, userType)).toList());
+        itemsList.getItems().addAll(educationalContentData.attachmentsId.stream().map(client::getAttachmentData).map(attachmentData -> new EducationalContentItemView(educationalContentId, attachmentData, userType)).toList());
     }
 
 

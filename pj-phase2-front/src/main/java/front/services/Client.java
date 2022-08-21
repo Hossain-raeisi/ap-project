@@ -86,6 +86,7 @@ public class Client {
         urls.put(APIs.update_course_details, baseAddress + "/update/course/details");
         urls.put(APIs.update_course_addTAs, baseAddress + "/update/course/addTAs");
         urls.put(APIs.update_course_addStudents, baseAddress + "/update/course/addStudents");
+        urls.put(APIs.update_educationalContent, baseAddress + "/update/course/educationalContent");
 
         urls.put(APIs.update_request_finalize, baseAddress + "/update/request/finalize");
         urls.put(APIs.update_professor_details, baseAddress + "/update/professor/details");
@@ -693,6 +694,16 @@ public class Client {
     }
 
     public void addEducationalContent(EducationalContentData educationalContentData) {
-        // TODO
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(gson.toJson(educationalContentData))
+        );
+        var response = sendSecureRequest(APIs.add_educationalContent, request);
+    }
+
+    public void updateEducationalContent(EducationalContentData educationalContentData) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(gson.toJson(educationalContentData))
+        );
+        var response = sendSecureRequest(APIs.update_educationalContent, request);
     }
 }

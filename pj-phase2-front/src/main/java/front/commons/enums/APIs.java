@@ -78,5 +78,5 @@ public enum APIs {
     auth_getCaptcha,
     auth_login,
     auth_logout,
-    auth_check, data_attachment, serverStatus, data_userContacts, add_request_contact, data_userChatFeedsWithUsers, data_isStudentCourseSelectionTime, add_exam,
+    auth_check, data_attachment, serverStatus, data_userContacts, add_request_contact, data_userChatFeedsWithUsers, data_isStudentCourseSelectionTime, add_exam, update_educationalContent,
 }
