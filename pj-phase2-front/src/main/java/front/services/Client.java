@@ -68,6 +68,7 @@ public class Client {
         urls.put(APIs.add_assignment, baseAddress + "/add/assignment");
         urls.put(APIs.add_assignmentAnswer, baseAddress + "/add/assignmentAnswer");
         urls.put(APIs.add_educationalContent, baseAddress + "/add/educationalContent");
+        urls.put(APIs.add_exam, baseAddress + "/add/exam");
 
         urls.put(APIs.add_request_serviceExemption, baseAddress + "/add/request/serviceExemption");
         urls.put(APIs.add_request_recommendation, baseAddress + "/add/request/recommendation");
@@ -682,5 +683,16 @@ public class Client {
         var request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(""));
         var response = sendSecureRequest(APIs.data_isStudentCourseSelectionTime, request);
         return gson.fromJson(response.body(), Boolean.class);
+    }
+
+    public void addExam(ExamData examData) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(gson.toJson(examData))
+        );
+        var response = sendSecureRequest(APIs.add_exam, request);
+    }
+
+    public void addEducationalContent(EducationalContentData educationalContentData) {
+        // TODO
     }
 }

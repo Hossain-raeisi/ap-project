@@ -213,9 +213,8 @@ public class User {
         logins.remove(0);
     }
 
-    public ArrayList<Request> getAssigneeRequests() {
-        // TODO
-        return  null;
+    public List<Request> getAssigneeRequests() {
+        return  assigneeRequests;
     }
 
     public List<Request> getAssignerRequests() {

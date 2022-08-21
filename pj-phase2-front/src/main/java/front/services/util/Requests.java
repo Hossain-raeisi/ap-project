@@ -18,7 +18,8 @@ public class Requests {
         var client = Client.getInstance();
         return client.getFilteredRequests(new RequestFilter(
                 client.getCurrentUserData().id.toString(),
-                RequestUserType.assigner));
+                RequestUserType.assigner)
+        );
     }
 
     public static ArrayList<RequestData> getUserAssigneeRequestsData(){

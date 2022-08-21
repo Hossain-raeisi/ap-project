@@ -12,12 +12,6 @@ import java.util.UUID;
 
 public class EducationalContent {
 
-    public enum UserType {
-        professor,
-        TA,
-        other,
-    }
-
     @FXML
     Label name;
     @FXML
@@ -32,14 +26,15 @@ public class EducationalContent {
         var client = Client.getInstance();
         var educationalContentData = front.services.util.EducationalContent.getEducationalContentData();
         this.educationalContentId = educationalContentData.id;
+        var userType = front.services.util.EducationalContent.getCurrentUserType();
 
         name.setText(educationalContentData.name);
 
         if (!Client.getInstance().getCurrentUserData().id.equals(client.getCourseData(educationalContentData.courseId).professorId))
             deleteButton.setVisible(false);
 
-        itemsList.getItems().addAll(educationalContentData.texts.stream().map(EducationalContentItemView::new).toList());
-        itemsList.getItems().addAll(educationalContentData.attachmentsId.stream().map(client::getAttachmentData).map(EducationalContentItemView::new).toList());
+        itemsList.getItems().addAll(educationalContentData.texts.stream().map(text -> new EducationalContentItemView(text, userType)).toList());
+        itemsList.getItems().addAll(educationalContentData.attachmentsId.stream().map(client::getAttachmentData).map(attachmentData -> new EducationalContentItemView(attachmentData, userType)).toList());
     }
 
 

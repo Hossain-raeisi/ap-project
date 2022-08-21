@@ -62,6 +62,7 @@ public class Server {
                 post("/assignment", Server::addAssignment);
                 post("/assignmentAnswer", Server::addAssignmentAnswer);
                 post("/educationalContent", Server::addEducationalContent);
+                post("/exam", Server::addExam);
 
                 path("/request", () -> {
                     get("/serviceExemption", Server::requestServiceExemption);
@@ -134,6 +135,7 @@ public class Server {
                 post("/getAssignmentAnswers", Server::getAssignmentsAnswers);  // return an assignment's answers
                 post("/educationalContent", Server::getEducationalContent);
                 post("/exam", Server::getExam);
+                post("/currentSemesterCourses", Server::getCurrentSemesterCourses);
 
                 post("/faculty", Server::getFacultyData);
                 post("/facultyByName", Server::getFacultyByName);
@@ -170,6 +172,21 @@ public class Server {
             });
 
         });
+    }
+
+    /**
+     * takes examData in body
+     */
+    private static String addExam(spark.Request request, Response response) {
+        return null;
+    }
+
+    private static String getCurrentSemesterCourses(spark.Request request, Response response) {
+        var activeCourses = (List<Course>) DataBase.entityManager.createNativeQuery(
+                "SELECT * FROM course WHERE archived='f'", Course.class
+        ).getResultList();
+        response.body(gson.toJson(activeCourses.stream().map(RawDataHandler::getCourseData).toList()));
+        return response.body();
     }
 
     /**
@@ -541,7 +558,7 @@ public class Server {
 
     public static String getFilteredRequests(spark.Request request, Response response) {
         RequestFilter requestFilter = gson.fromJson(request.body(), RequestFilter.class);
-        List<Request> requests = DataBase.getFilteredRequests(requestFilter);
+        List<Request> requests = DataBase.getFilteredRequests(RawDataHandler.getUserFromRequest(request), requestFilter);
         List<RequestData> requestsData = requests.stream().map(RawDataHandler::getRequestData).collect(Collectors.toList());
 
         response.body(gson.toJson(requestsData));

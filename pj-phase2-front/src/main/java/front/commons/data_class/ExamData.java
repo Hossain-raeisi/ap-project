@@ -17,4 +17,10 @@ public class ExamData {
         this.time = time;
         this.name = name;
     }
+
+    public ExamData(UUID courseId, LocalDateTime time, String name) {
+        this.courseId = courseId;
+        this.time = time;
+        this.name = name;
+    }
 }

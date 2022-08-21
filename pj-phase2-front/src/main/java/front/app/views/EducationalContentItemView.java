@@ -1,8 +1,8 @@
 package front.app.views;
 
 import front.Config;
-import front.app.fxml_controllers.EducationalContent;
 import front.commons.data_class.AttachmentData;
+import front.services.util.EducationalContent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -10,10 +10,10 @@ import javafx.scene.text.Font;
 
 public class EducationalContentItemView extends Pane {
     Label text  = new Label();
-//    Button deleteButton = new Button();
-//    Button changeButton = new Button();
+    Button deleteButton = new Button();
+    Button changeButton = new Button();
 
-    public EducationalContentItemView(AttachmentData attachmentData){
+    public EducationalContentItemView(AttachmentData attachmentData, front.services.util.EducationalContent.UserType userType){
         setPrefWidth(1000);
         setPrefHeight(50);
 
@@ -25,10 +25,10 @@ public class EducationalContentItemView extends Pane {
         text.setLayoutX(5);
         text.setLayoutY(10);
 
-//        setButtonsVisibility(userType);
+        setButtonsVisibility(userType);
     }
 
-    public EducationalContentItemView(String itemText){
+    public EducationalContentItemView(String itemText, front.services.util.EducationalContent.UserType userType){
         setPrefWidth(1000);
         setPrefHeight(50);
 
@@ -39,19 +39,27 @@ public class EducationalContentItemView extends Pane {
         getChildren().add(text);
         text.setLayoutX(5);
         text.setLayoutY(10);
+
+        setButtonsVisibility(userType);
     }
 
-//    public void setButtonsVisibility(EducationalContent.UserType userType) {
-//        getChildren().add(changeButton);
-//        changeButton.setLayoutX(700);
-//        changeButton.setLayoutX(10);
-//
-//        getChildren().add(deleteButton);
-//        changeButton.setLayoutX(800);
-//        changeButton.setLayoutX(10);
-//
-//        deleteButton.setVisible(userType == EducationalContent.UserType.professor);
-//        changeButton.setVisible(userType != EducationalContent.UserType.other);
-//    }
+    public void setButtonsVisibility(EducationalContent.UserType userType) {
+        Font f = new Font(16);
+
+        deleteButton.setText("delete");
+        deleteButton.setFont(f);
+        getChildren().add(deleteButton);
+        deleteButton.setLayoutX(490);
+        deleteButton.setLayoutY(10);
+
+        changeButton.setText("change");
+        changeButton.setFont(f);
+        getChildren().add(changeButton);
+        changeButton.setLayoutX(570);
+        changeButton.setLayoutY(10);
+
+        deleteButton.setVisible(userType == front.services.util.EducationalContent.UserType.professor);
+        changeButton.setVisible(userType != front.services.util.EducationalContent.UserType.other);
+    }
 
 }

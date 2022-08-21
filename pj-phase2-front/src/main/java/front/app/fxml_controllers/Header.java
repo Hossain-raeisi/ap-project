@@ -4,6 +4,7 @@ import front.commons.data_class.UserData;
 import front.app.Util;
 import front.services.Client;
 import front.services.security.LogOut;
+import front.services.util.CourseSelection;
 import front.services.util.Messenger;
 import front.services.util.ProfessorCourses;
 import front.services.util.Profile;

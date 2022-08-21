@@ -52,7 +52,8 @@ public class SceneControl {
         assignmentPage,
         educationalContentPage,
         messengerPage,
-        newChatPage, courseSelection,
+        newChatPage,
+        courseSelectionPage, newExamPage, newEducationalContentPage,
     }
 
     public static Map<SceneType, String> scenes = new HashMap<>();
@@ -112,7 +113,8 @@ public class SceneControl {
         scenes.put(SceneType.educationalContentPage, "/fxmls/educationalContent.fxml");
         scenes.put(SceneType.messengerPage, "/fxmls/messenger.fxml");
         scenes.put(SceneType.newChatPage, "/fxmls/newChat.fxml");
-        scenes.put(SceneType.courseSelection, "/fxmls/courseSelection.fxml");
+        scenes.put(SceneType.courseSelectionPage, "/fxmls/courseSelection.fxml");
+        scenes.put(SceneType.newExamPage, "/fxmls/newExam.fxml");
 
         //requests
         scenes.put(SceneType.serviceExemptionRequestPage, "/fxmls/requests/serviceExemptionRequest.fxml");

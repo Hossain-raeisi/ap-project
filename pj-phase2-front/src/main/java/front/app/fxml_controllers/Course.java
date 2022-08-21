@@ -75,7 +75,7 @@ public class Course {
 
         educationalContents.getSelectionModel().selectedItemProperty().addListener(
                 (observableValue, educationalContentView, t1) ->
-                        educationalContentSelected(educationalContents.getSelectionModel().getSelectedItem().getEducationalContentId().toString())
+                        educationalContentSelected(educationalContents.getSelectionModel().getSelectedItem().getEducationalContentId().toString(), courseData.id)
         );
         assignments.getSelectionModel().selectedItemProperty().addListener(
                 (observableValue, assignmentView, t1) ->
@@ -83,8 +83,8 @@ public class Course {
         );
     }
 
-    public void educationalContentSelected(String educationalContentId) {
-        EducationalContent.showPage(educationalContentId);
+    public void educationalContentSelected(String educationalContentId, UUID courseId) {
+        EducationalContent.showPage(educationalContentId, courseId);
     }
 
     public void assignmentSelected(String assignmentId) {

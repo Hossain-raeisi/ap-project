@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.NewExam">
+
+    <fx:include source="header.fxml" />
+   <DatePicker fx:id="examDateField" layoutX="56.0" layoutY="267.0" prefHeight="24.0" prefWidth="237.0" promptText="exam date" />
+   <TextField fx:id="examNameField" layoutX="56.0" layoutY="237.0" prefHeight="24.0" prefWidth="237.0" promptText="exam name" />
+   <Button fx:id="registerButton" layoutX="194.0" layoutY="328.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="24.0" prefWidth="99.0" text="register" />
+   <Label layoutX="56.0" layoutY="189.0" text="course: ">
+      <font>
+         <Font name="System Bold Italic" size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="courseName" layoutX="158.0" layoutY="192.0" text="Label">
+      <font>
+         <Font name="System Italic" size="18.0" />
+      </font>
+   </Label>
+   <TextField fx:id="examTimeField" layoutX="56.0" layoutY="297.0" prefHeight="24.0" prefWidth="237.0" promptText="exam time HH:mm" />
+
+</AnchorPane>

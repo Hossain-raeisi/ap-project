@@ -18,4 +18,11 @@ public class EducationalContentData {
         this.attachmentsId = attachmentsId;
         this.courseId = courseId;
     }
+
+    public EducationalContentData(String name, ArrayList<String> texts, ArrayList<UUID> attachmentsId, UUID courseId) {
+        this.name = name;
+        this.texts = texts;
+        this.attachmentsId = attachmentsId;
+        this.courseId = courseId;
+    }
 }

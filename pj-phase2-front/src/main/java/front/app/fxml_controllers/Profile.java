@@ -49,7 +49,8 @@ public class Profile {
 
         UserData userData = client.getCurrentUserData();
 
-        pictureImage.setImage(Util.getImageFromAttachmentData(userData.imageData));
+        // TODO
+//        pictureImage.setImage(Util.getImageFromAttachmentData(userData.imageData));
         nameLabel.setText(Util.getUserFullName(userData));
         emailLabel.setText(userData.email);
         phoneNumberLabel.setText(userData.phoneNumber);

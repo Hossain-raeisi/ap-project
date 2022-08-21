@@ -13,6 +13,7 @@ import back.models.users.User;
 import back.services.Logger;
 import commons.data_class.*;
 import commons.enums.RequestType;
+import commons.enums.RequestUserType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -210,8 +211,12 @@ public class DataBase {
         }
     }
 
-    public static ArrayList<Request> getFilteredRequests(RequestFilter requestFilter) {
-        //TODO
+    public static ArrayList<Request> getFilteredRequests(User user, RequestFilter requestFilter) {
+        switch (requestFilter.type) {
+            case assignee -> { return new ArrayList<>(user.getAssigneeRequests()); }
+            case assigner -> { return new ArrayList<>(user.getAssignerRequests()); }
+        }
+
         return null;
     }
 
