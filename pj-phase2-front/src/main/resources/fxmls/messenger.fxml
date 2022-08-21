@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.Messenger">
+
+    <fx:include source="header.fxml" />
+
+    <ListView fx:id="chatFeedsList" fixedCellSize="50.0" layoutX="27.0" layoutY="195.0" opacity="0.72" prefHeight="861.0" prefWidth="450.0" />
+    <Label layoutX="27.0" layoutY="148.0" text="Chat feeds">
+        <font>
+            <Font name="System Bold Italic" size="36.0" />
+        </font>
+    </Label>
+
+    <ListView fx:id="chat" fixedCellSize="50.0" layoutX="500.0" layoutY="195.0" opacity="0.72" prefHeight="810.0" prefWidth="925.0" />
+
+
+    <Label layoutX="1446.0" layoutY="162.0" text="Chat feed members">
+        <font>
+            <Font name="System Bold Italic" size="24.0" />
+        </font>
+    </Label>
+    <ListView fx:id="chatFeedMembers" fixedCellSize="50.0" layoutX="1446.0" layoutY="195.0" opacity="0.72" prefHeight="861.0" prefWidth="450.0" />
+   <TextField fx:id="messageField" layoutX="500.0" layoutY="1007.0" prefHeight="24.0" prefWidth="871.0" promptText="enter ur message" />
+   <Button fx:id="sendMessage" layoutX="1375.0" layoutY="1007.0" mnemonicParsing="false" onAction="#sendMessageButtonAction" text="send" />
+   <TextField fx:id="attachmentPathField" layoutX="500.0" layoutY="1032.0" prefHeight="24.0" prefWidth="801.0" promptText="enter attachment absolute path" />
+   <Button fx:id="addAttachment" layoutX="1302.0" layoutY="1032.0" mnemonicParsing="false" onAction="#addAttachmentButtonAction" text="add attachment" />
+   <Button fx:id="newChatButton" layoutX="399.0" layoutY="158.0" mnemonicParsing="false" onAction="#newChatButtonAction" text="new chat" />
+
+
+</AnchorPane>

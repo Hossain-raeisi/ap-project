@@ -1,0 +1,20 @@
+[
+  {
+    "courseId": "1",
+    "studentId": "1",
+    "id": "1",
+    "examScores": {},
+    "homeWorkScore": {},
+    "temporaryScore": 15.0,
+    "finalScore": 15.0,
+    "finalized": true
+  },
+  {
+    "courseId": "1",
+    "studentId": "15",
+    "id": "2",
+    "examScores": {},
+    "homeWorkScore": {},
+    "finalized": false
+  }
+]

@@ -1,0 +1,82 @@
+package front.commons.enums;
+
+public enum APIs {
+    add_student,
+    add_professor,
+    add_message,
+    add_attachments,
+
+    add_course,
+    add_assignment,
+    add_assignmentAnswer,
+    add_educationalContent,
+
+    add_request_serviceExemption,
+    add_request_recommendation,
+    add_request_minor,
+    add_request_dorm,
+    add_request_withdrawal,
+    add_request_objection,
+
+    remove_user,
+    remove_course,
+    remove_educationalContent,
+
+    update_course_finalize,
+    update_course_details,
+    update_course_addTAs,
+    update_course_addStudents,
+
+    update_request_finalize,
+    update_professor_details,
+    update_faculty_details,
+    update_user_details,
+    update_user_password,
+    update_score_details,
+
+    data_user,
+    data_userType,
+    data_userWithNationalId,
+    data_userLogIns,
+    data_student,
+    data_students,
+    data_studentNonFinalizedActiveScores,
+    data_professor,
+    data_professors,
+    data_professorAllFinalizedScore,
+    data_userActiveCourses,
+
+    data_course,
+    data_courses,
+    data_courseScoring,
+    data_courseAssignment,
+    data_assignment,
+    data_assignmentAnswers,
+    data_educationalContent,
+    data_exam,
+
+    data_faculty,
+    data_facultyByName,
+    data_faculties,
+    data_request,
+    data_objectionRequests,
+    data_weekly_plan,
+    data_score,
+
+    data_userChatFeeds,
+    data_chatFeed,
+    data_message,
+
+    data_filtered_students,
+    data_filtered_professors,
+    data_filtered_courses,
+    data_filtered_userExams,
+    data_filtered_scores,
+    data_filtered_facultyMinors,
+    data_filtered_requests,
+
+    auth_getCaptcha,
+    auth_login,
+    auth_logout,
+    auth_check, data_attachment, serverStatus, data_userContacts, add_request_contact, data_userChatFeedsWithUsers, data_isStudentCourseSelectionTime,
+}

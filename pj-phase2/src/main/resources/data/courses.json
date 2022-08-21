@@ -1,0 +1,329 @@
+[
+  {
+    "name": "basic programming",
+    "facultyId": "1",
+    "professorId": "4",
+    "level": "bachelor",
+    "size": 4,
+    "id": "1",
+    "time": "10-12",
+    "temporaryScoresSet": true,
+    "archived": true,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": [
+      "1",
+      "15"
+    ]
+  },
+  {
+    "name": "artificial intelligence 2",
+    "facultyId": "2",
+    "professorId": "6",
+    "level": "master",
+    "size": 3,
+    "id": "2",
+    "time": "12-14",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "advanced programming",
+    "facultyId": "1",
+    "professorId": "5",
+    "level": "bachelor",
+    "size": 4,
+    "id": "3",
+    "time": "14-16",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "15::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "3-2022-11-15T09:00",
+        "courseId": "3"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": [
+      "1"
+    ]
+  },
+  {
+    "name": "c4",
+    "facultyId": "2",
+    "professorId": "18",
+    "level": "bachelor",
+    "size": 4,
+    "id": "4",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c5",
+    "facultyId": "2",
+    "professorId": "18",
+    "level": "bachelor",
+    "size": 4,
+    "id": "5",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c6",
+    "facultyId": "3",
+    "professorId": "19",
+    "level": "bachelor",
+    "size": 4,
+    "id": "6",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c7",
+    "facultyId": "3",
+    "professorId": "19",
+    "level": "bachelor",
+    "size": 4,
+    "id": "7",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c8",
+    "facultyId": "4",
+    "professorId": "20",
+    "level": "bachelor",
+    "size": 4,
+    "id": "8",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c9",
+    "facultyId": "4",
+    "professorId": "20",
+    "level": "bachelor",
+    "size": 4,
+    "id": "9",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c10",
+    "facultyId": "5",
+    "professorId": "21",
+    "level": "bachelor",
+    "size": 4,
+    "id": "10",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  },
+  {
+    "name": "c11",
+    "facultyId": "5",
+    "professorId": "21",
+    "level": "bachelor",
+    "size": 4,
+    "id": "11",
+    "time": "10-12",
+    "temporaryScoresSet": false,
+    "archived": false,
+    "weekDays": [
+      "sunday",
+      "monday"
+    ],
+    "exams": [
+      {
+        "time": "10::Nov::2022 09::00::00",
+        "name": "midterm",
+        "id": "1-2022-11-10T09:00",
+        "courseId": "1"
+      },
+      {
+        "time": "10::Jan::2023 09::00::00",
+        "name": "final",
+        "id": "1-2023-01-10T09:00",
+        "courseId": "1"
+      }
+    ],
+    "homeWorks": [],
+    "registeredStudentIds": []
+  }
+]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="front.app.fxml_controllers.requests.ThesisDefenceRoundRequest"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <fx:include source="../header.fxml" />
+    <Label fx:id="buttonExplanationLabel" layoutX="592.0" layoutY="422.0" text="Do you wanna book a round?">
+        <font>
+            <Font size="48.0" />
+        </font>
+    </Label>
+    <Button fx:id="thesisDefenceRoundRequestButton" layoutX="891.0" layoutY="515.0" mnemonicParsing="false" onAction="#thesisDefenceRoundRequestButtonAction" style="-fx-background-color: #3299bb;" text="Yes!">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+
+</AnchorPane>

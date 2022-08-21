@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.TemporaryScoresDeputyEducation">
+
+    <fx:include source="header.fxml" />
+   <Button fx:id="studentButton" layoutX="701.0" layoutY="576.0" mnemonicParsing="false" onAction="#studentButtonAction" style="-fx-background-color: #3299bb;" text="Student">
+      <font>
+         <Font size="48.0" />
+      </font>
+   </Button>
+   <TextField fx:id="studentIdField" layoutX="701.0" layoutY="544.0" prefHeight="25.0" prefWidth="230.0" promptText="student id" />
+   <Button fx:id="objectionsButton" layoutX="701.0" layoutY="434.0" mnemonicParsing="false" onAction="#objectionsButtonAction" style="-fx-background-color: #3299bb;" text="Objections">
+      <font>
+         <Font size="48.0" />
+      </font>
+   </Button>
+   <Button fx:id="professorButton" layoutX="958.0" layoutY="575.0" mnemonicParsing="false" onAction="#professorButtonAction" style="-fx-background-color: #3299bb;" text="Professor">
+      <font>
+         <Font size="48.0" />
+      </font>
+   </Button>
+   <TextField fx:id="professorIdField" layoutX="958.0" layoutY="544.0" prefHeight="25.0" prefWidth="262.0" promptText="professor id" />
+   <Button fx:id="courseButton" layoutX="1008.0" layoutY="435.0" mnemonicParsing="false" onAction="#courseButtonAction" style="-fx-background-color: #3299bb;" text="Course">
+      <font>
+         <Font size="48.0" />
+      </font>
+   </Button>
+   <TextField fx:id="courseIdField" layoutX="1008.0" layoutY="403.0" prefHeight="25.0" prefWidth="212.0" promptText="course id" />
+
+
+</AnchorPane>

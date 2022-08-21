@@ -1,0 +1,177 @@
+package back.models.users;
+
+import back.database.DataBase;
+import back.models.course.Course;
+import back.models.course.Score;
+import commons.enums.StudentEducationalStatus;
+import commons.enums.StudentType;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity(name = "student")
+@DiscriminatorValue("student")
+public class Student extends User {
+
+    @ManyToOne
+    @JoinColumn(name = "supervisor_professor_id")
+    Professor supervisorProfessor;
+
+    @Enumerated(EnumType.ORDINAL)
+    StudentEducationalStatus educationalStatus;
+
+    @Enumerated(EnumType.ORDINAL)
+    StudentType type;
+
+    @OneToMany(mappedBy = "student")
+    List<Score> activeScores;
+
+    @OneToMany(mappedBy = "student")
+    List<Score> passedScores;
+
+    @Column
+    Float totalGradePointAverage;
+
+    @Column
+    int staringYear;
+
+    @Column
+    String major;
+
+    @Column
+    String studentNumber;
+
+    @ManyToMany()
+    List<Course> TACourses;
+
+    protected Student() {
+    }
+
+    public Student(String username, String notHashedPassword, String email, StudentType type) {
+        super(username, notHashedPassword, email);
+        this.type = type;
+    }
+
+    public StudentEducationalStatus getEducationalStatus() {
+        return educationalStatus;
+    }
+
+    public void setEducationalStatus(StudentEducationalStatus educationalStatus) {
+        this.educationalStatus = educationalStatus;
+    }
+
+    public Professor getSupervisorProfessor() {
+        return supervisorProfessor;
+    }
+
+    public void setSupervisorProfessor(Professor supervisorProfessor) {
+        this.supervisorProfessor = supervisorProfessor;
+    }
+
+    public Float getTotalGradePointAverage() {
+        return totalGradePointAverage;
+    }
+
+    public void setTotalGradePointAverage(Float totalGradePointAverage) {
+        this.totalGradePointAverage = totalGradePointAverage;
+    }
+
+    public int getStaringYear() {
+        return staringYear;
+    }
+
+    public void setStaringYear(int staringYear) {
+        this.staringYear = staringYear;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
+    }
+
+    public void addActiveScore(Score score) {
+        this.activeScores.add(score);
+    }
+
+    public List<Score> getActiveScores() {
+        return activeScores;
+    }
+
+    public void setActiveScores(List<Score> activeScores) {
+        this.activeScores = activeScores;
+    }
+
+    public void addPassedCourseScore(Score score) {
+        this.passedScores.add(score);
+    }
+
+    public List<Score> getPassedScores() {
+        return passedScores;
+    }
+
+    public void setPassedScores(List<Score> passedScores) {
+        this.passedScores = passedScores;
+    }
+
+    public StudentType getType() {
+        return type;
+    }
+
+    public void setType(StudentType type) {
+        this.type = type;
+    }
+
+    @Override
+    public ArrayList<Course> getActiveCourses() {
+        ArrayList<Course> result = new ArrayList<>();
+
+        for (Score score : activeScores) {
+            result.add(score.getCourse());
+        }
+
+        result.addAll(TACourses);
+
+        return result;
+    }
+
+    public List<Course> getTACourses() {
+        return TACourses;
+    }
+
+    public void setTACourses(List<Course> TACourses) {
+        this.TACourses = TACourses;
+    }
+
+    @Override
+    public List<User> getContacts() {
+        var result = new ArrayList<User>();
+
+        result.addAll(
+                (List<Student>) DataBase.entityManager.
+                        createNativeQuery(String.format("SELECT * FROM edu_use WHERE user_type='student' AND staringyear=%s", staringYear), Student.class)
+                        .getResultList()
+        );
+
+        result.addAll(
+                (List<Student>) DataBase.entityManager.
+                createNativeQuery(String.format("SELECT * FROM edu_use WHERE user_type='student' AND major='%s' AND staringyear!=%s",major, staringYear), Student.class)
+                .getResultList()
+        );
+
+        result.add(supervisorProfessor);
+
+        return result;
+    }
+}

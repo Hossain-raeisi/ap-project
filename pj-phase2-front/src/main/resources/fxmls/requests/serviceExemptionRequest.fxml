@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.requests.ServiceExemptionRequest">
+
+    <fx:include source="../header.fxml" />
+   <Button fx:id="requestButton" layoutX="918.0" layoutY="253.0" mnemonicParsing="false" onAction="#requestButtonAction" style="-fx-background-color: #b5d2e1;" text="request">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Label fx:id="responseLabel" layoutX="460.0" layoutY="356.0" prefHeight="300.0" prefWidth="1000.0" style="-fx-background-color: #9a9a9a;">
+      <font>
+         <Font size="30.0" />
+      </font>
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+   </Label>
+
+</AnchorPane>

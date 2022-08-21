@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.Profile">
+
+    <fx:include source="header.fxml" />
+   <ImageView fx:id="pictureImage" fitHeight="300.0" fitWidth="300.0" layoutX="60.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
+   <Label fx:id="nameLabel" layoutX="402.0" layoutY="170.0" text="name">
+      <font>
+         <Font size="48.0" />
+      </font>
+   </Label>
+   <Label fx:id="emailLabel" layoutX="402.0" layoutY="240.0" text="email">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="phoneNumberLabel" layoutX="402.0" layoutY="302.0" text="phone number">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="idNumberLabel" layoutX="402.0" layoutY="367.0" text="id number">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="s_fNumberLabel" layoutX="81.0" layoutY="548.0" text="student/professor number">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="levelLabel" layoutX="81.0" layoutY="654.0" text="level">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="ey_rnLabel" layoutX="81.0" layoutY="601.0" text="entering year/room number">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="facultyLabel" layoutX="402.0" layoutY="420.0" text="faculty">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="avgGradeStudentLabel" layoutX="81.0" layoutY="707.0" text="avg grade">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="educationalStatusStudentLabel" layoutX="81.0" layoutY="769.0" text="educational status">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="supervisorProfessorStudentLabel" layoutX="81.0" layoutY="822.0" text="supervisor professor">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Button fx:id="changeThemeButton" layoutX="1733.0" layoutY="993.0" mnemonicParsing="false" onAction="#changeThemeButtonAction" style="-fx-background-color: #3299bb;" text="change theme">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button fx:id="editButton" layoutX="1664.0" layoutY="993.0" mnemonicParsing="false" onAction="#editButtonAction" style="-fx-background-color: #3299bb;" text="edit">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+
+</AnchorPane>

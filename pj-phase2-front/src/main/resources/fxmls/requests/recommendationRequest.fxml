@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.requests.RecommendationRequest">
+
+    <fx:include source="../header.fxml" />
+    <Label fx:id="facultyListLabel" layoutX="360.0" layoutY="180.0" text="Choose faculty:">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <ListView fx:id="facultyList" fixedCellSize="40.0" layoutX="360.0" layoutY="225.0" prefHeight="283.0" prefWidth="1200.0" />
+    <ListView fx:id="professorList" fixedCellSize="40.0" layoutX="360.0" layoutY="591.0" prefHeight="283.0" prefWidth="1200.0" />
+    <Label fx:id="professorListLabel" layoutX="360.0" layoutY="545.0" text="Choose professor:">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <Button fx:id="requestButton" layoutX="913.0" layoutY="941.0" mnemonicParsing="false" onAction="#requestButtonAction" style="-fx-background-color: ff9900;" text="Request">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Button>
+    <Label fx:id="responseLabel" layoutX="653.0" layoutY="1013.0" text="your request has been recorded. checkout requests tab for more information">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

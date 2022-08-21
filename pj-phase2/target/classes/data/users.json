@@ -1,0 +1,512 @@
+[
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 19.0,
+    "staringYear": 1400,
+    "studentNumber": "1",
+    "activeScoreIds": [
+      "1"
+    ],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "bachelorStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email2@gmail.com",
+    "facultyId": "1",
+    "firstName": "f1",
+    "lastName": "l1",
+    "idNumber": "1",
+    "phoneNumber": "9129129191",
+    "type2": "bachelorStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [
+      "1-me2022-04-19T13:42:43.410402500",
+      "1-scoreObjection2022-04-19T15:57:05.172853800",
+      "1-ce soft2022-04-19T22:42:10.754373700",
+      "1-cs2022-05-28T22:07:53.288706800",
+      "1-ce soft2022-05-28T22:08:31.057706900"
+    ],
+    "logins": [
+      "28::May::2022 22::15::25",
+      "28::May::2022 22::21::44"
+    ],
+    "activeCourseIds": [
+      "3"
+    ]
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "studentNumber": "2",
+    "activeScoreIds": [],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "masterStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f2",
+    "lastName": "l2",
+    "idNumber": "2",
+    "phoneNumber": "9129129191",
+    "type2": "masterStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [
+      "2-dorm2022-05-28T22:06:35.821706600"
+    ],
+    "logins": [
+      "7::Oct::2021 09::30::27",
+      "28::May::2022 22::06::21"
+    ],
+    "activeCourseIds": []
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "studentNumber": "3",
+    "activeScoreIds": [],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "doctorateStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f3",
+    "lastName": "l3",
+    "idNumber": "3",
+    "phoneNumber": "9129129191",
+    "type2": "doctorateStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2021 09::30::27",
+      "28::May::2022 22::10::58"
+    ],
+    "activeCourseIds": []
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "studentNumber": "1",
+    "activeScoreIds": [
+      "1"
+    ],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "bachelorStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email2@gmail.com",
+    "facultyId": "2",
+    "firstName": "f15",
+    "lastName": "l15",
+    "idNumber": "15",
+    "phoneNumber": "9129129191",
+    "type2": "bachelorStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "19::Apr::2022 23::07::08",
+      "19::Apr::2022 23::07::44"
+    ],
+    "activeCourseIds": []
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "studentNumber": "2",
+    "activeScoreIds": [],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "masterStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "2",
+    "firstName": "f16",
+    "lastName": "l16",
+    "idNumber": "16",
+    "phoneNumber": "9129129191",
+    "type2": "masterStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ],
+    "activeCourseIds": []
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "studentNumber": "3",
+    "activeScoreIds": [],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "doctorateStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f17",
+    "lastName": "l17",
+    "idNumber": "17",
+    "phoneNumber": "9129129191",
+    "type2": "doctorateStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ],
+    "activeCourseIds": []
+  },
+  {
+    "rank": "assistantProfessor",
+    "roomNumber": 100,
+    "type": "normalProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f4",
+    "lastName": "l4",
+    "idNumber": "4",
+    "phoneNumber": "9129129191",
+    "type2": "normalProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "imageAddress": "/resources/images/user_images/mirOmidHajiMirSadeghi.png",
+    "logins": [
+      "28::May::2022 22::03::11",
+      "28::May::2022 22::17::11"
+    ],
+    "activeCourseIds": [
+      "1"
+    ]
+  },
+  {
+    "rank": "fullProfessor",
+    "roomNumber": 102,
+    "type": "facultyHeadProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f6",
+    "lastName": "l6",
+    "idNumber": "6",
+    "phoneNumber": "9129129191",
+    "type2": "facultyHeadProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "imageAddress": "/resources/images/user_images/hamidRezaFanayi.png",
+    "logins": [
+      "19::Apr::2022 22::41::34",
+      "28::May::2022 22::10::49"
+    ]
+  },
+  {
+    "rank": "assistantProfessor",
+    "roomNumber": 118,
+    "type": "normalProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "2",
+    "firstName": "f18",
+    "lastName": "l18",
+    "idNumber": "18",
+    "phoneNumber": "9129129191",
+    "type2": "normalProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "19::Apr::2022 15::57::19",
+      "19::Apr::2022 18::41::27"
+    ],
+    "activeCourseIds": [
+      "4",
+      "5"
+    ]
+  },
+  {
+    "rank": "associateProfessor",
+    "roomNumber": 103,
+    "type": "deputyEducation",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "2",
+    "firstName": "f8",
+    "lastName": "l8",
+    "idNumber": "8",
+    "phoneNumber": "9129129191",
+    "type2": "deputyEducationProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "28::May::2022 21::49::57",
+      "28::May::2022 22::09::42"
+    ]
+  },
+  {
+    "rank": "fullProfessor",
+    "roomNumber": 104,
+    "type": "facultyHeadProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "2",
+    "firstName": "f7",
+    "lastName": "l7",
+    "idNumber": "6",
+    "phoneNumber": "9129129191",
+    "type2": "facultyHeadProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "assistantProfessor",
+    "roomNumber": 119,
+    "type": "normalProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "3",
+    "firstName": "f19",
+    "lastName": "l19",
+    "idNumber": "19",
+    "phoneNumber": "9129129191",
+    "type2": "normalProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "19::Apr::2022 15::57::19",
+      "19::Apr::2022 18::41::27"
+    ],
+    "activeCourseIds": [
+      "6",
+      "7"
+    ]
+  },
+  {
+    "rank": "associateProfessor",
+    "roomNumber": 105,
+    "type": "deputyEducation",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "3",
+    "firstName": "f9",
+    "lastName": "l9",
+    "idNumber": "9",
+    "phoneNumber": "9129129191",
+    "type2": "deputyEducationProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "fullProfessor",
+    "roomNumber": 106,
+    "type": "facultyHeadProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "3",
+    "firstName": "f10",
+    "lastName": "l10",
+    "idNumber": "10",
+    "phoneNumber": "9129129191",
+    "type2": "facultyHeadProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "assistantProfessor",
+    "roomNumber": 120,
+    "type": "normalProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "4",
+    "firstName": "f20",
+    "lastName": "l20",
+    "idNumber": "20",
+    "phoneNumber": "9129129191",
+    "type2": "normalProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "19::Apr::2022 15::57::19",
+      "19::Apr::2022 18::41::27"
+    ],
+    "activeCourseIds": [
+      "8",
+      "9"
+    ]
+  },
+  {
+    "rank": "associateProfessor",
+    "roomNumber": 107,
+    "type": "deputyEducation",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "4",
+    "firstName": "f11",
+    "lastName": "l11",
+    "idNumber": "11",
+    "phoneNumber": "9129129191",
+    "type2": "deputyEducationProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "fullProfessor",
+    "roomNumber": 108,
+    "type": "facultyHeadProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "4",
+    "firstName": "f12",
+    "lastName": "l12",
+    "idNumber": "12",
+    "phoneNumber": "9129129191",
+    "type2": "facultyHeadProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2021 09::30::27",
+      "19::Apr::2022 13::39::04"
+    ]
+  },
+  {
+    "rank": "assistantProfessor",
+    "roomNumber": 121,
+    "type": "normalProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "5",
+    "firstName": "f21",
+    "lastName": "l21",
+    "idNumber": "21",
+    "phoneNumber": "9129129191",
+    "type2": "normalProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "19::Apr::2022 15::57::19",
+      "19::Apr::2022 18::41::27"
+    ],
+    "activeCourseIds": [
+      "10",
+      "11"
+    ]
+  },
+  {
+    "rank": "associateProfessor",
+    "roomNumber": 109,
+    "type": "deputyEducation",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "5",
+    "firstName": "f13",
+    "lastName": "l13",
+    "idNumber": "13",
+    "phoneNumber": "9129129191",
+    "type2": "deputyEducationProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "fullProfessor",
+    "roomNumber": 110,
+    "type": "facultyHeadProfessor",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "5",
+    "firstName": "f14",
+    "lastName": "l14",
+    "idNumber": "14",
+    "phoneNumber": "9129129191",
+    "type2": "facultyHeadProfessor",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "7::Oct::2020 09::30::27",
+      "7::Oct::2021 09::30::27"
+    ]
+  },
+  {
+    "rank": "associateProfessor",
+    "roomNumber": 101,
+    "type": "deputyEducation",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@gmail.com",
+    "facultyId": "1",
+    "firstName": "f5",
+    "lastName": "l5",
+    "idNumber": "5",
+    "phoneNumber": "09133333333",
+    "type2": "deputyEducationProfessor",
+    "assigneeRequestIds": [
+      "1-cs2022-05-28T22:07:53.288706800",
+      "1-cs2022-05-28T22:07:53.288706800"
+    ],
+    "assignerRequestIds": [],
+    "imageAddress": "/resources/images/user_images/shahramKhazayi.png",
+    "logins": [
+      "28::May::2022 21::50::09",
+      "28::May::2022 22::08::56"
+    ],
+    "activeCourseIds": [
+      "3"
+    ]
+  },
+  {
+    "educationalStatus": "underGraduate",
+    "supervisorProfessorId": "4",
+    "totalGradePointAverage": 0.0,
+    "staringYear": 1400,
+    "Major": "math",
+    "studentNumber": "20",
+    "activeScoreIds": [],
+    "passedCoursesScoreIds": [],
+    "activeExamIds": [],
+    "type": "bachelorStudent",
+    "password": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���",
+    "email": "email@email.com",
+    "facultyId": "1",
+    "firstName": "f16",
+    "lastName": "l16",
+    "idNumber": "16",
+    "phoneNumber": "99999999999",
+    "type2": "bachelorStudent",
+    "assigneeRequestIds": [],
+    "assignerRequestIds": [],
+    "logins": [
+      "28::May::2022 21::53::57",
+      "28::May::2022 21::53::57"
+    ],
+    "activeCourseIds": []
+  }
+]

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="front.app.fxml_controllers.EditUserProfessor"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <fx:include source="header.fxml" />
+    <Label layoutX="127.0" layoutY="176.0" text="first name:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="firstNameField" layoutX="324.0" layoutY="178.0" />
+    <Label layoutX="128.0" layoutY="210.0" text="last name:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="lastNameField" layoutX="324.0" layoutY="212.0" />
+    <Label layoutX="128.0" layoutY="244.0" text="faculty:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="facultyNameField" layoutX="324.0" layoutY="246.0" />
+    <Label layoutX="128.0" layoutY="281.0" text="email:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="emailField" layoutX="324.0" layoutY="283.0" />
+    <Label layoutX="128.0" layoutY="317.0" text="national id:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="nationalIdField" layoutX="324.0" layoutY="318.0" />
+    <Label layoutX="127.0" layoutY="352.0" text="phone number:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="phoneNumberField" layoutX="324.0" layoutY="353.0" />
+    <Label layoutX="127.0" layoutY="388.0" text="image address:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="imageAddressField" layoutX="324.0" layoutY="390.0" />
+    <Label layoutX="127.0" layoutY="422.0" text="password:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="passwordField" layoutX="324.0" layoutY="424.0" />
+    <Label layoutX="127.0" layoutY="454.0" text="rank:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="rankField" layoutX="323.0" layoutY="456.0" />
+    <Label layoutX="127.0" layoutY="487.0" text="room number:">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="roomNumberField" layoutX="323.0" layoutY="489.0" />
+    <Button fx:id="editProfessorButton" layoutX="223.0" layoutY="533.0" mnemonicParsing="false" onAction="#editProfessorButtonAction" style="-fx-background-color: #3299bb;" text="edit">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Button>
+
+</AnchorPane>

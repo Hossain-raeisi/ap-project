@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="basePane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #bcbcbc;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.Header">
+    <Pane fx:id="headerPane" prefHeight="122.0" prefWidth="1920.0" style="-fx-background-color: #424242;">
+        <ImageView fx:id="userImage" fitHeight="80.0" fitWidth="80.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="userFullName" layoutX="119.0" layoutY="46.0" prefHeight="30.0" prefWidth="60.0" textFill="#dadada">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="userEmail" layoutX="119.0" layoutY="75.0" prefHeight="30.0" prefWidth="150.0" textFill="#dadada">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ButtonBar fx:id="navbarButtonBar" layoutX="218.0" layoutY="70.0" prefHeight="40.0" prefWidth="1485.0">
+            <buttons>
+                <MenuButton fx:id="educationalServices" mnemonicParsing="false" prefHeight="25.0" prefWidth="217.0" style="-fx-background-color: #3299bb;" text="educational services">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#weeklyPlanMenuItemAction" text="weekly plan" />
+                        <MenuItem mnemonicParsing="false" onAction="#examsMenuItemAction" text="exams" />
+                        <Menu fx:id="requestsSubMenu" mnemonicParsing="false" text="requests" />
+                    </items>
+                </MenuButton>
+                <MenuButton fx:id="reportCard" mnemonicParsing="false" prefHeight="25.0" style="-fx-background-color: #3299bb;" text="report card">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#temporaryScoresMenuItemAction" text="temporary scores" />
+                    </items>
+                </MenuButton>
+                <MenuButton fx:id="register" mnemonicParsing="false" style="-fx-background-color: #3299bb;" text="Register">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#coursesMenuItemAction" text="Courses" />
+                        <MenuItem mnemonicParsing="false" onAction="#professorsMenuItemAction" text="Professors" />
+                    </items>
+                </MenuButton>
+                <Button fx:id="userProfile" mnemonicParsing="false" onAction="#userProfileButtonAction" style="-fx-background-color: #3299bb;" text="user profile" />
+                <Button fx:id="requests" mnemonicParsing="false" onAction="#requestsButtonAction" prefHeight="25.0" style="-fx-background-color: #3299bb;" text="requests" />
+                <Button fx:id="cw" mnemonicParsing="false" onAction="#cwButtonAction" prefHeight="25.0" style="-fx-background-color: #3299bb;" text="cw" />
+                <Button fx:id="messenger" mnemonicParsing="false" onAction="#messengerButtonAction" prefHeight="25.0" style="-fx-background-color: #3299bb;" text="messenger" />
+                <Button fx:id="courseSelection" mnemonicParsing="false" onAction="#courseSelectionButtonAction" prefHeight="25.0" style="-fx-background-color: #3299bb;" text="course selection" />
+            </buttons>
+            <padding>
+                <Insets right="10.0" />
+            </padding>
+        </ButtonBar>
+        <Button fx:id="logOut" layoutX="1839.0" layoutY="83.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#logOutButtonAction" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: #ff9900;" text="Log out" />
+        <Button fx:id="home" layoutX="1772.0" layoutY="83.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #ff9900;" text="Home" />
+        <Label layoutX="639.0" layoutY="12.0" prefHeight="68.0" prefWidth="643.0" text="Sharif University of Technology" textFill="#e9e9e9">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+      <Label layoutX="1594.0" layoutY="14.0" text="last login: " textFill="#c6c6c6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lastLogInTimeLabel" layoutX="1675.0" layoutY="18.0" text="Label" textFill="#c6c6c6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </Pane>
+</AnchorPane>

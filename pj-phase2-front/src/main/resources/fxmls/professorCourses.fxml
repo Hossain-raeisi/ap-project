@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.ProfessorCourses">
+
+    <fx:include source="header.fxml" />
+    <ListView fx:id="coursesListView" fixedCellSize="50.0" layoutX="260.0" layoutY="238.0" opacity="0.72" prefHeight="800.0" prefWidth="1400.0" />
+    <Label layoutX="819.0" layoutY="154.0" text="Your Courses">
+        <font>
+            <Font name="Book Antiqua Bold Italic" size="48.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

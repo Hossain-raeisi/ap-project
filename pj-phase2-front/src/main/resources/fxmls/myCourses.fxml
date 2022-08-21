@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.MyCourses">
+    <fx:include source="header.fxml" />
+    <Label layoutX="179.0" layoutY="193.0" text="My Courses">
+        <font>
+            <Font name="System Bold Italic" size="24.0" />
+        </font>
+    </Label>
+    <ListView fx:id="courses" fixedCellSize="40.0" layoutX="179.0" layoutY="240.0" prefHeight="680.0" prefWidth="1563.0" />
+
+</AnchorPane>

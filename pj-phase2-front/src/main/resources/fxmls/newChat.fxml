@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.NewChat">
+
+    <fx:include source="header.fxml" />
+   <ListView fx:id="contactsList" layoutX="53.0" layoutY="229.0" prefHeight="800.0" prefWidth="500.0" />
+   <Label layoutX="53.0" layoutY="190.0" text="Your contacts:">
+      <font>
+         <Font name="System Bold Italic" size="24.0" />
+      </font>
+   </Label>
+   <TextArea fx:id="messageField" layoutX="578.0" layoutY="229.0" prefHeight="222.0" prefWidth="931.0" promptText="enter ur message" />
+   <Button fx:id="sendToAllButton" layoutX="578.0" layoutY="458.0" mnemonicParsing="false" onAction="#sendToAllButtonAction" text="send to all" />
+   <Button fx:id="sendToButton" layoutX="689.0" layoutY="458.0" mnemonicParsing="false" onAction="#sendToButtonAction" text="send to:" />
+   <TextField fx:id="sendToNationalIdField" layoutX="767.0" layoutY="458.0" prefHeight="24.0" prefWidth="743.0" promptText="enter national id's separated by &quot;,&quot;" />
+   <Label layoutX="669.0" layoutY="462.0" text="or">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Button fx:id="newContactButton" layoutX="578.0" layoutY="498.0" mnemonicParsing="false" onAction="#newContactButtonAction" text="request new contact " />
+   <TextField fx:id="newContactNationalIdField" layoutX="748.0" layoutY="498.0" promptText="new contact national id" />
+
+
+</AnchorPane>

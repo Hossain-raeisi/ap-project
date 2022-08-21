@@ -1,0 +1,25 @@
+services:
+  edu_db:
+    image: docker.repos.balad.ir/postgres:12.9
+    environment:
+      POSTGRES_DB: edu
+      POSTGRES_USER: edu
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - edu_dbdata:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+  edu_s3:
+    image: docker.repos.balad.ir/minio/minio
+    environment: 
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    volumes:
+      - edu_minio:/data
+    ports:
+      - 5434:5434
+    command: server --address 0.0.0.0:5434 /data
+
+volumes:
+ edu_dbdata:
+ edu_minio:
