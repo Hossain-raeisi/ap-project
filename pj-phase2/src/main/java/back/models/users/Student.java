@@ -24,10 +24,10 @@ public class Student extends User {
     @Enumerated(EnumType.ORDINAL)
     StudentType type;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     List<Score> activeScores;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     List<Score> passedScores;
 
     @Column
@@ -39,7 +39,7 @@ public class Student extends User {
     @Column
     String major;
 
-    @Column
+    @Column(name = "student_number")
     String studentNumber;
 
     @ManyToMany()

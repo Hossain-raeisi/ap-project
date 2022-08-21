@@ -12,6 +12,15 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "course_id"),
+                @Index(columnList = "faculty"),
+                @Index(columnList = "professor"),
+                @Index(columnList = "level"),
+                @Index(columnList = "archived"),
+        }
+)
 public class Course {
 
     @Id
@@ -62,7 +71,7 @@ public class Course {
     )
     List<Student> TAs;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<EducationalContent> educationalContents;
 
     protected Course() {

@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "course_id"),
+        }
+)
 public class EducationalContent {
 
     @Id
@@ -23,7 +28,7 @@ public class EducationalContent {
     @Column
     List<String> texts;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<Attachment> medias;
 
     @ManyToOne

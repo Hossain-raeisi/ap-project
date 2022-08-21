@@ -8,6 +8,12 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "course_id"),
+                @Index(columnList = "time"),
+        }
+)
 public class Exam {
 
     @Id
@@ -20,7 +26,7 @@ public class Exam {
     @JoinColumn(name = "course_id")
     Course course;
 
-    @Temporal(TemporalType.TIMESTAMP)       // TODO: check if works
+    @Temporal(TemporalType.TIMESTAMP)
     LocalDateTime time;
 
     @Column

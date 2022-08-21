@@ -5,9 +5,17 @@ import back.models.users.Student;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "student_id"),
+                @Index(columnList = "assignment_id"),
+                @Index(columnList = "sent_time"),
+        }
+)
 public class AssignmentAnswer {
 
     @Id
@@ -29,6 +37,10 @@ public class AssignmentAnswer {
 
     @Column
     String text;
+
+    @Column(name = "sent_time")
+    @Temporal(TemporalType.TIMESTAMP)
+    LocalDateTime sentTime;
 
     private AssignmentAnswer() {
     }
@@ -80,4 +92,11 @@ public class AssignmentAnswer {
         this.assignment = assignment;
     }
 
+    public LocalDateTime getSentTime() {
+        return sentTime;
+    }
+
+    public void setSentTime(LocalDateTime sentTime) {
+        this.sentTime = sentTime;
+    }
 }

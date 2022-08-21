@@ -23,13 +23,13 @@ public class Professor extends User {
     @Enumerated(EnumType.ORDINAL)
     ProfessorRank rank;
 
-    @OneToMany(mappedBy = "professor")
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
     List<Course> activeCourses;
 
     @Column
     int roomNumber;
 
-    @Column
+    @Column(name = "professor_number")
     String professorNumber;
 
     protected Professor() {

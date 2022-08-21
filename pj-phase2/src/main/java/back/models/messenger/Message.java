@@ -10,6 +10,11 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "chatfeed_id"),
+        }
+)
 public class Message {
     @Id
     @GeneratedValue
@@ -23,10 +28,10 @@ public class Message {
     @Column
     String text;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     List<Attachment> attachments;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "chatfeed_id")
     ChatFeed chatFeed;
 

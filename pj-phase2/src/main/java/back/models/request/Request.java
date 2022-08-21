@@ -11,6 +11,13 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "type"),
+                @Index(columnList = "status"),
+                @Index(columnList = "assigner_id"),
+        }
+)
 public class Request {
 
     @Id

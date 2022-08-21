@@ -12,6 +12,11 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "name"),
+        }
+)
 public class Faculty {
 
     @Id
@@ -20,18 +25,18 @@ public class Faculty {
     @Column(name = "id", nullable = false)
     private UUID id;
 
-    @OneToMany(mappedBy = "faculty")
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
     List<Professor> professors;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "deputy_education_professor_id")
     Professor deputyEducationProfessor;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "faculty_head_professor_id")
     Professor facultyHeadProfessor;
 
-    @Column
+    @Column(unique = true)
     String name;
 
     @Column

@@ -18,7 +18,15 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "edu_user")
+@Table(
+        name = "edu_user",
+        indexes = {
+                @Index(columnList = "national_id"),
+                @Index(columnList = "type"),
+                @Index(columnList = "student_number"),
+                @Index(columnList = "professor_number"),
+        }
+)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "user_type")
 public class User {
@@ -33,10 +41,10 @@ public class User {
     @JoinColumn(name = "faculty_id")
     Faculty faculty;
 
-    @OneToMany(mappedBy = "assigner")
+    @OneToMany(mappedBy = "assigner", cascade = CascadeType.ALL)
     List<Request> assignerRequests;
 
-    @Column(unique=true)
+    @Column(name = "national_id",unique=true)
     String nationalId;
 
     @Column

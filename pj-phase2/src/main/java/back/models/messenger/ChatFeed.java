@@ -19,7 +19,7 @@ public class ChatFeed {
     @ManyToMany(mappedBy = "chatFeeds")
     List<User> users;
 
-    @OneToMany(mappedBy = "chatFeed")
+    @OneToMany(mappedBy = "chatFeed", cascade = CascadeType.ALL)
     List<Message> messages;
 
     private ChatFeed() {

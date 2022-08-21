@@ -236,7 +236,8 @@ public class RawDataHandler {
                 assignmentAnswer.getStudent().getFullName(),
                 assignmentAnswer.getStudent().getId(),
                 assignmentAnswer.getAttachment().getId(),
-                assignmentAnswer.getText()
+                assignmentAnswer.getText(),
+                assignmentAnswer.getSentTime()
         );
     }
 

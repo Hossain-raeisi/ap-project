@@ -9,6 +9,13 @@ import java.util.Map;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "course_id"),
+                @Index(columnList = "student_id"),
+                @Index(columnList = "finalized"),
+        }
+)
 public class Score {
 
     @Id

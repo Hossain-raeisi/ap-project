@@ -9,6 +9,14 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "start_time"),
+                @Index(columnList = "full_score_time"),
+                @Index(columnList = "end_time"),
+                @Index(columnList = "course_id"),
+        }
+)
 public class Assignment {
 
     @Id
@@ -21,12 +29,15 @@ public class Assignment {
     @JoinColumn(name = "course_id")
     Course course;
 
+    @Column(name = "start_time")
     @Temporal(TemporalType.TIMESTAMP)
     LocalDateTime startTime;
 
+    @Column(name = "full_score_time")
     @Temporal(TemporalType.TIMESTAMP)
     LocalDateTime fullScoreTime;
 
+    @Column(name = "end_time")
     @Temporal(TemporalType.TIMESTAMP)
     LocalDateTime endTime;
 
