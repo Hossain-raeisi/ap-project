@@ -1,10 +1,10 @@
 package front.services.model_handlers;
 
+import front.app.SceneControl;
+import front.app.Util;
 import front.commons.data_class.FacultyData;
 import front.commons.data_class.ProfessorData;
 import front.commons.data_class.ProfessorFilter;
-import front.app.SceneControl;
-import front.app.Util;
 import front.services.Client;
 
 import java.util.ArrayList;

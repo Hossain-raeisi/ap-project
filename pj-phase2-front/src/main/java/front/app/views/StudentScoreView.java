@@ -30,7 +30,7 @@ public class StudentScoreView extends Pane {
         studentName.setLayoutX(10);
         studentName.setLayoutY(10);
 
-        if (scoreData.temporaryScore != null){
+        if (scoreData.temporaryScore != null) {
             studentAlreadySetScore.setText(String.valueOf(scoreData.temporaryScore));
             studentAlreadySetScore.setFont(f);
             getChildren().add(studentAlreadySetScore);
@@ -51,7 +51,7 @@ public class StudentScoreView extends Pane {
         ScoreData scoreData = Client.getInstance().getScoreData(scoreId);
         String scoreFieldText = studentScore.getText();
 
-        if (scoreFieldText.equals("")){
+        if (scoreFieldText.equals("")) {
             return scoreData.temporaryScore;
         }
 

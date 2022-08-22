@@ -7,7 +7,7 @@ import javafx.scene.text.Font;
 
 import java.util.UUID;
 
-public class CourseView extends Pane{
+public class CourseView extends Pane {
 
     Label name = new Label();
     Label professor = new Label();

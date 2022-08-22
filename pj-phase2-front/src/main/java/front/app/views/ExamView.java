@@ -7,7 +7,7 @@ import javafx.scene.text.Font;
 
 import java.util.UUID;
 
-public class ExamView extends Pane{
+public class ExamView extends Pane {
 
     Label name = new Label();
     Label courseName = new Label();
@@ -15,7 +15,7 @@ public class ExamView extends Pane{
     UUID examId;
 
 
-    public ExamView(ExamData examData){
+    public ExamView(ExamData examData) {
         examId = examData.id;
 
         setPrefWidth(1300);

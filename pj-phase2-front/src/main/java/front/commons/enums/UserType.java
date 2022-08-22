@@ -7,4 +7,6 @@ public enum UserType {
     bachelorStudent,
     masterStudent,
     doctorateStudent,
+    mohseni,
+    admin,
 }

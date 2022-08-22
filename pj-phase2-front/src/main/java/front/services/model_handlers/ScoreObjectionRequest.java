@@ -1,8 +1,8 @@
 package front.services.model_handlers;
 
+import front.app.SceneControl;
 import front.commons.data_class.ObjectionRequestData;
 import front.commons.data_class.ScoreData;
-import front.app.SceneControl;
 import front.services.Client;
 
 public class ScoreObjectionRequest {

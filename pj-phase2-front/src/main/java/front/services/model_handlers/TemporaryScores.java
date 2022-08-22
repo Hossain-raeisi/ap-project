@@ -1,8 +1,8 @@
 package front.services.model_handlers;
 
+import front.app.SceneControl;
 import front.commons.data_class.ScoreData;
 import front.commons.data_class.StudentData;
-import front.app.SceneControl;
 import front.services.Client;
 
 import java.util.ArrayList;

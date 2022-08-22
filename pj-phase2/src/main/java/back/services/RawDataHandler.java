@@ -258,7 +258,7 @@ public class RawDataHandler {
 
             Professor professor = new Professor(
                     professorData.nationalId,
-                    "ssss", //TODO
+                    "placeholder",
                     professorData.email,
                     professorData.type
             );

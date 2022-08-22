@@ -20,7 +20,7 @@ public class ScoreObjectionRequest {
     Button objectButton;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         ScoreData scoreData = front.services.model_handlers.ScoreObjectionRequest.getScoreData();
         courseNameLabel.setText(scoreData.courseName);
         courseScoreLabel.setText(String.valueOf(scoreData.finalScore));
@@ -30,7 +30,7 @@ public class ScoreObjectionRequest {
         var client = Client.getInstance();
 
         front.services.model_handlers.ScoreObjectionRequest.object(objectionTextArea.getText());
-        front.services.model_handlers.TemporaryScores.showPage( client.getStudentData(client.getCurrentUserData().id));
+        front.services.model_handlers.TemporaryScores.showPage(client.getStudentData(client.getCurrentUserData().id));
     }
 
 }

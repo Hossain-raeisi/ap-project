@@ -5,7 +5,7 @@ import front.services.Client;
 
 public class WithdrawalRequest {
 
-    public static void showPage(){
+    public static void showPage() {
         SceneControl.changeScene(SceneControl.SceneType.withdrawalRequestPage);
     }
 

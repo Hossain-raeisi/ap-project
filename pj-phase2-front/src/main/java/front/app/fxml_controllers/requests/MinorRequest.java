@@ -25,8 +25,8 @@ public class MinorRequest {
     Label responseLabel;
 
     @FXML
-    public void initialize(){
-        for (FacultyData facultyData: front.services.model_handlers.MinorRequest.getFaculties()){
+    public void initialize() {
+        for (FacultyData facultyData : front.services.model_handlers.MinorRequest.getFaculties()) {
             facultyList.getItems().add(facultyData.name);
         }
 
@@ -39,7 +39,7 @@ public class MinorRequest {
         responseLabel.setVisible(false);
     }
 
-    public void facultySelected(String facultyName){
+    public void facultySelected(String facultyName) {
         minorList.getItems().clear();
         minorList.getItems().addAll(Objects.requireNonNull(front.services.model_handlers.MinorRequest.getFacultyMinors(facultyName)));
 
@@ -49,7 +49,7 @@ public class MinorRequest {
         });
     }
 
-    public void registerButtonAction(ActionEvent ignoredActionEvent){
+    public void registerButtonAction(ActionEvent ignoredActionEvent) {
         String facultyName = facultyList.getSelectionModel().getSelectedItem();
         String minorName = minorList.getSelectionModel().getSelectedItem();
 

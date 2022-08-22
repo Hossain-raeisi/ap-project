@@ -1,7 +1,10 @@
 package front.app.views;
 
 import front.commons.data_class.MessageData;
+import front.services.Client;
+import front.services.FileHandler;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 
@@ -14,13 +17,14 @@ public class MessageView extends Pane {
     Label text = new Label();
     Label sentTime = new Label();
 
-    // TODO: add attachments
+    ListView<String> attachmentsPath = new ListView<>();
 
     public MessageView(MessageData messageData) {
+        var client = Client.getInstance();
         messageId = messageData.id;
 
         setPrefWidth(900);
-        setPrefHeight(70);
+        setPrefHeight(100);
 
         Font f = new Font(18);
 
@@ -40,7 +44,13 @@ public class MessageView extends Pane {
         sentTime.setFont(f);
         getChildren().add(sentTime);
         sentTime.setLayoutX(700);
-        sentTime.setLayoutY(60);
+        sentTime.setLayoutY(90);
 
+        attachmentsPath.getItems().addAll(messageData.attachmentsId.stream().map(client::getAttachmentData).map(attachmentData -> FileHandler.writeFile(attachmentData.data, attachmentData.fileName)).toList());
+        getChildren().add(attachmentsPath);
+        sentTime.setLayoutX(5);
+        sentTime.setLayoutY(50);
+        sentTime.setPrefHeight(40);
+        sentTime.setPrefWidth(300);
     }
 }

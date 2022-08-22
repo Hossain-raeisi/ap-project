@@ -1,8 +1,8 @@
 package front.services.security;
 
-import front.commons.data_class.CaptchaData;
 import front.app.SceneControl;
 import front.app.Util;
+import front.commons.data_class.CaptchaData;
 import front.services.Client;
 import javafx.scene.image.Image;
 
@@ -12,11 +12,11 @@ public class LogIn {
     static CaptchaData captchaData;
     static int passwordChangeTimeDeltaInSeconds = 60 * 60 * 24 * 10;
 
-    public static void showPage(){
+    public static void showPage() {
         SceneControl.changeScene(SceneControl.SceneType.logInPage);
     }
 
-    public static void newCaptcha(){
+    public static void newCaptcha() {
         captchaData = Client.getInstance().getCaptcha();
     }
 
@@ -28,7 +28,7 @@ public class LogIn {
 //            return;
 //        }
 
-        if (client.logIn(idNumber, password)){
+        if (client.logIn(idNumber, password)) {
             SceneControl.loadScenes(client.getUserType(client.getCurrentUserData().id));
             var userLastLogin = client.getUserLastLogIn(client.getCurrentUserData().id);
             if (userLastLogin.isBefore(LocalDateTime.now().minusSeconds(passwordChangeTimeDeltaInSeconds))) {

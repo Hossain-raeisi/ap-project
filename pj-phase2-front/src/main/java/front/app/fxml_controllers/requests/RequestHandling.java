@@ -20,19 +20,19 @@ public class RequestHandling {
     Button disapproveButton;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         RequestData requestData = front.services.model_handlers.RequestHandling.getCurrentRequestData();
 
         requestDescriptionLabel.setText(requestData.description);
         requestTitleLabel.setText(requestData.title);
     }
 
-    public void approveButtonAction(){
+    public void approveButtonAction() {
         String responseText = responseTextArea.getText();
         front.services.model_handlers.RequestHandling.approveCurrentRequest(responseText);
     }
 
-    public void disapproveButtonAction(){
+    public void disapproveButtonAction() {
         String responseText = responseTextArea.getText();
         front.services.model_handlers.RequestHandling.disapproveCurrentRequest(responseText);
     }

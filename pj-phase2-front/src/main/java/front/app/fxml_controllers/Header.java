@@ -78,7 +78,7 @@ public class Header {
         userFullName.setText(Util.getUserFullName(userData));
         userEmail.setText(userData.email);
 
-//        lastLogInTimeLabel.setText(client.getUserLastLogIn(userData.id).toString());
+        lastLogInTimeLabel.setText(client.getUserLastLogIn(userData.id).toString());
 
         if (userData.imageData != null)
             userImage.setImage(Util.getImageFromAttachmentData(userData.imageData));
@@ -90,12 +90,17 @@ public class Header {
             case normalProfessor -> loadNormalProfessor();
             case deputyEducationProfessor -> loadDeputyEducationProfessor();
             case facultyHeadProfessor -> loadFacultyHeadProfessor();
+            case mohseni -> loadMohseni();
         }
 
         if (theme == Theme.cyber) {
             basePane.setStyle("-fx-background-color: #370065");
             headerPane.setStyle("-fx-background-color: #f5398a");
         }
+    }
+
+    private void loadMohseni() {
+
     }
 
     public void loadBachelorStudent() {

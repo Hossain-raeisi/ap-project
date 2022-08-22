@@ -25,6 +25,4 @@ public class TemporaryScoresStudent {
                 (observableValue, s, t1) -> ScoreObjectionRequest.showPage(scoresData.get(scoresList.getSelectionModel().getSelectedIndex()))
         );
     }
-
-
 }

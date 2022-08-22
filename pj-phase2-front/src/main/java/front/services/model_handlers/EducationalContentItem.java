@@ -79,7 +79,7 @@ public class EducationalContentItem {
         return Client.getInstance().getEducationalContentData(educationalContentId);
     }
 
-    public static void deleteItem(UUID educationalContentId, String text){
+    public static void deleteItem(UUID educationalContentId, String text) {
         var client = Client.getInstance();
         var educationalContentData = client.getEducationalContentData(educationalContentId);
 
@@ -87,7 +87,7 @@ public class EducationalContentItem {
         client.updateEducationalContent(educationalContentData);
     }
 
-    public static void deleteItem(UUID educationalContentId, UUID attachmentId){
+    public static void deleteItem(UUID educationalContentId, UUID attachmentId) {
         var client = Client.getInstance();
         var educationalContentData = client.getEducationalContentData(educationalContentId);
 

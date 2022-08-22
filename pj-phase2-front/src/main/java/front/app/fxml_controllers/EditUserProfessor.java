@@ -42,42 +42,42 @@ public class EditUserProfessor {
         ProfessorData professorData = front.services.model_handlers.EditUserProfessor.getCurrentProfessorData();
 
         String firstName = firstNameField.getText();
-        if (!firstName.equals("")){
+        if (!firstName.equals("")) {
             professorData.firstName = firstName;
         }
 
         String lastName = lastNameField.getText();
-        if (!lastName.equals("")){
+        if (!lastName.equals("")) {
             professorData.lastName = lastName;
         }
 
         String facultyName = facultyNameField.getText();
-        if (!facultyName.equals("")){
+        if (!facultyName.equals("")) {
             professorData.facultyId = Client.getInstance().getFacultyByName(facultyName).id;
         }
 
         String email = emailField.getText();
-        if (!email.equals("")){
+        if (!email.equals("")) {
             professorData.email = email;
         }
 
         String nationalId = nationalIdField.getText();
-        if (!nationalId.equals("")){
+        if (!nationalId.equals("")) {
             professorData.nationalId = nationalId;
         }
 
         String phoneNumber = phoneNumberField.getText();
-        if (!phoneNumber.equals("")){
+        if (!phoneNumber.equals("")) {
             professorData.phoneNumber = phoneNumber;
         }
 
         String imageAddress = imageAddressField.getText();
-        if (!imageAddress.equals("")){
+        if (!imageAddress.equals("")) {
             professorData.imageData = Util.getAttachmentDataFromFilePath(imageAddress);
         }
 
         String password = passwordField.getText();
-        if (!password.equals("")){
+        if (!password.equals("")) {
             try {
                 PasswordChangeData passwordChangeData = new PasswordChangeData(
                         professorData.id,
@@ -97,7 +97,7 @@ public class EditUserProfessor {
         }
 
         String roomNumber = roomNumberField.getText();
-        if (!roomNumber.equals("")){
+        if (!roomNumber.equals("")) {
             professorData.roomNumber = Integer.parseInt(roomNumber);
         }
 

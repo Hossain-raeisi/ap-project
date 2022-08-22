@@ -1,10 +1,10 @@
 package front.app.fxml_controllers;
 
+import front.app.views.ProfessorView;
 import front.commons.data_class.ProfessorData;
 import front.commons.data_class.ProfessorFilter;
 import front.commons.enums.ProfessorRank;
 import front.commons.enums.UserType;
-import front.app.views.ProfessorView;
 import front.services.Client;
 import front.services.model_handlers.AddUser;
 import front.services.model_handlers.EditUserProfessor;

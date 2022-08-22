@@ -11,7 +11,10 @@ import back.models.users.Professor;
 import back.models.users.Student;
 import back.models.users.User;
 import back.services.Logger;
-import commons.data_class.*;
+import commons.data_class.CourseFilter;
+import commons.data_class.ProfessorFilter;
+import commons.data_class.RequestFilter;
+import commons.data_class.StudentFilter;
 import commons.enums.RequestType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -44,12 +47,12 @@ public class DataBase {
         String addedConditions = null;
 
         if (professorFilter.name != null) {
-            addedConditions = "AND ";
-            addedConditions += String.format("last_name LIKE '%s' ", professorFilter.name);
+            addedConditions = "AND (";
+            addedConditions += "lastname LIKE '" + professorFilter.name + "%' ";
         }
         if (professorFilter.rank != null) {
             if (addedConditions == null) {
-                addedConditions = "AND ";
+                addedConditions = "AND (";
             } else {
                 addedConditions += "AND ";
             }
@@ -57,7 +60,7 @@ public class DataBase {
         }
         if (professorFilter.facultyId != null) {
             if (addedConditions == null) {
-                addedConditions = "AND ";
+                addedConditions = "AND (";
             } else {
                 addedConditions += "AND ";
             }
@@ -65,7 +68,7 @@ public class DataBase {
         }
 
         if (addedConditions != null) {
-            queryString += addedConditions + " )";
+            queryString += addedConditions + ")";
         }
 
         return (List<Professor>) entityManager.createNativeQuery(queryString, Professor.class).getResultList();
@@ -120,12 +123,12 @@ public class DataBase {
     }
 
     public static List<Student> getFilteredStudents(StudentFilter studentFilter) {
-        String queryString = "SELECT * FROM edu_user WHERE user_type='professor' ";
+        String queryString = "SELECT * FROM edu_user WHERE user_type='student' ";
         String addedConditions = null;
 
         if (studentFilter.name != null) {
             addedConditions = "WHERE ";
-            addedConditions += String.format("last_name LIKE '%s' ", studentFilter.name);
+            addedConditions += "lastname LIKE '" + studentFilter.name + "%' ";
         }
         if (studentFilter.studentNumber != null) {
             if (addedConditions == null) {
@@ -249,10 +252,7 @@ public class DataBase {
     public static List<Student> getStudentsWithStudentNumberStart(String studentNumberStart) {
         return (List<Student>) DataBase.entityManager.
                 createNativeQuery(
-                        String.format(
-                                "SELECT * FROM edu_use WHERE user_type='student' AND studentnumber LIKE '%s%'",
-                                studentNumberStart
-                        ),
+                        "SELECT * FROM edu_use WHERE user_type='student' AND studentnumber LIKE '" + studentNumberStart + "%'",
                         Student.class
                 ).getResultList();
     }
@@ -288,7 +288,7 @@ public class DataBase {
 
             var contacts = user.getContacts();
 
-            for (var contact: contacts) {
+            for (var contact : contacts) {
                 var chatFeed = new ChatFeed(
                         new ArrayList<>() {{
                             add(user);

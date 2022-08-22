@@ -1,7 +1,7 @@
 package front.app.views;
 
-import front.commons.data_class.RequestData;
 import front.app.Util;
+import front.commons.data_class.RequestData;
 import front.services.Client;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -18,7 +18,7 @@ public class RequestView extends Pane {
     Label id = new Label();
     UUID requestId;
 
-    public RequestView(RequestData requestData){
+    public RequestView(RequestData requestData) {
         Client client = Client.getInstance();
         requestId = requestData.id;
 
@@ -40,7 +40,7 @@ public class RequestView extends Pane {
         status.setLayoutY(5);
 
         StringBuilder assignees = new StringBuilder();
-        for (UUID userId: requestData.assigneeIds){
+        for (UUID userId : requestData.assigneeIds) {
             assignees.append(Util.getUserFullName(client.getUserData(userId))).append(", ");
         }
         assignee.setText(assignees.toString());

@@ -5,7 +5,6 @@ import front.commons.data_class.UserData;
 import front.services.FileHandler;
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Util {
@@ -16,7 +15,7 @@ public class Util {
 
     public static Image getImageFromAttachmentData(AttachmentData attachmentData) {
         var filePath = FileHandler.writeFile(attachmentData.data, attachmentData.fileName);
-        return new Image(filePath);
+        return new Image("file:media/" + attachmentData.fileName);
     }
 
     public static AttachmentData getAttachmentDataFromFilePath(String filePath) {
@@ -27,7 +26,7 @@ public class Util {
     }
 
     public static void stopWorkerThreads(List<Thread> threads) {
-        for (var thread: threads){
+        for (var thread : threads) {
             thread.interrupt();
         }
     }

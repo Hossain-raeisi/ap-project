@@ -34,7 +34,7 @@ public class Student extends User {
     Double totalGradePointAverage;
 
     @Column
-    int staringYear;
+    Integer staringYear;
 
     @Column
     String major;
@@ -77,11 +77,11 @@ public class Student extends User {
         this.totalGradePointAverage = totalGradePointAverage;
     }
 
-    public int getStaringYear() {
+    public Integer getStaringYear() {
         return staringYear;
     }
 
-    public void setStaringYear(int staringYear) {
+    public void setStaringYear(Integer staringYear) {
         this.staringYear = staringYear;
     }
 

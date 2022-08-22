@@ -10,3 +10,21 @@
 2022-08-22T23:00:22.741763463 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
 2022-08-22T23:10:28.104670261 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
 2022-08-22T23:10:28.105286242 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:17:39.978709761 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:17:39.979355087 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:18:42.331304414 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:18:42.331556228 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:02:29.751281487 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:02:29.751679090 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:34.674799693 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:39.674109345 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:44.673977734 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:49.673965783 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:03.573146170 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:04:03.573170826 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:08.501654825 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:13.501528748 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:18.501382262 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:23.501989218 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:28.501033785 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:33.501028808 Info got called on: /api/statuswith request body: 

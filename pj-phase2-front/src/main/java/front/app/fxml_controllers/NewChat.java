@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class NewChat {
 
     @FXML
-    ListView<ContactView> contactsList;      // TODO
+    ListView<ContactView> contactsList;
     @FXML
     TextArea messageField;
     @FXML

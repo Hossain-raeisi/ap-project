@@ -1,7 +1,7 @@
 package front.app.views;
 
-import front.commons.data_class.ProfessorData;
 import front.app.Util;
+import front.commons.data_class.ProfessorData;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -10,7 +10,7 @@ import javafx.scene.text.Font;
 import java.util.UUID;
 
 
-public class ProfessorView extends Pane{
+public class ProfessorView extends Pane {
 
     ImageView iv = new ImageView();
     Label name = new Label();
@@ -19,7 +19,7 @@ public class ProfessorView extends Pane{
     Label roomNumber = new Label();
     UUID professorId;
 
-    public ProfessorView(ProfessorData professorData){
+    public ProfessorView(ProfessorData professorData) {
         professorId = professorData.id;
 
         setPrefWidth(1300);

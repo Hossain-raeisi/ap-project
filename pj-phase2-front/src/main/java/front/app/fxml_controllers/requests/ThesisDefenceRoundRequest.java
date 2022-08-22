@@ -15,7 +15,7 @@ public class ThesisDefenceRoundRequest {
     @FXML
     Label buttonExplanationLabel;
 
-    public void thesisDefenceRoundRequestButtonAction(ActionEvent actionEvent) {
+    public void thesisDefenceRoundRequestButtonAction(ActionEvent ignoredActionEvent) {
         buttonExplanationLabel.setText("your request has been recorded. checkout requests tab for more information");
         buttonExplanationLabel.setLayoutX(150);
         thesisDefenceRoundRequestButton.setVisible(false);

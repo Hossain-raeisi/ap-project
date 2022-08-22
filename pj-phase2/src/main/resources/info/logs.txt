@@ -14,3 +14,200 @@
 2022-08-22T23:17:39.979355087 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
 2022-08-22T23:18:42.331304414 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
 2022-08-22T23:18:42.331556228 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:02:29.751281487 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:02:29.751679090 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:34.674799693 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:39.674109345 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:44.673977734 Info got called on: /api/statuswith request body: 
+2022-08-23T02:02:49.673965783 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:03.573146170 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:04:03.573170826 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:08.501654825 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:13.501528748 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:18.501382262 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:23.501989218 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:28.501033785 Info got called on: /api/statuswith request body: 
+2022-08-23T02:04:33.501028808 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:33.475943774 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:33.476515117 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:06:38.406953846 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:39.996441556 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:06:43.406516243 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:50.125132876 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:50.125170768 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:06:54.911419153 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:06:54.925496815 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:06:54.937634699 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:06:55.084687211 Info got called on: /api/statuswith request body: 
+2022-08-23T02:06:56.267581115 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:06:56.271695754 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:06:56.274450404 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:00.084749076 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:07.576846358 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:07.577021180 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:07:12.198301573 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:12.202203528 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:12.205143991 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:12.537631328 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:12.899181225 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:12.902813088 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:12.905665213 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:13.134183629 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:13.136865682 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:13.139975296 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:13.335041553 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:13.339158625 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:13.342031550 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:13.518828479 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:13.522319997 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:13.525417447 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:17.537755416 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:22.537653342 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:24.231972819 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:24.235149589 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:24.237643406 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:24.444824551 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:24.448010219 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:24.450579779 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:24.651016335 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:24.653883780 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:24.656114108 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:24.890888112 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:24.893623125 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:24.895925039 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:27.537494167 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:38.995189653 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:38.995190805 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:07:43.937008295 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:48.513438177 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:07:48.516833734 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:07:48.518890311 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:07:51.446003747 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:54.331987114 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:07:54.332351485 Info got called on: /api/statuswith request body: 
+2022-08-23T02:07:59.282263405 Info got called on: /api/statuswith request body: 
+2022-08-23T02:08:07.715774763 Info got called on: /api/statuswith request body: 
+2022-08-23T02:08:09.330438870 Info got called on: /api/statuswith request body: 
+2022-08-23T02:08:12.595245468 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:08:12.597808897 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:08:12.599746069 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:08:46.124112493 Info got called on: /api/statuswith request body: 
+2022-08-23T02:08:46.127038468 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:00.121014279 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.150096182 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.152774750 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.155269128 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.157526496 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.159396841 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.161306951 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.163092084 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:09.165507954 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:11.661629680 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:11.661656701 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:09:16.606814844 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:22.378829232 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:22.749224182 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:09:22.752260807 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:09:22.754731961 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:09:40.642347675 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:40.645801321 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:40.648287734 Info got called on: /api/statuswith request body: 
+2022-08-23T02:09:57.346697631 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:09:57.346697712 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:02.299733899 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:10:02.302533164 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.304648493 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:10:02.305745913 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:02.308680065 Info got called on: /api/data/weeklyPlanwith request body: 
+2022-08-23T02:10:02.332981176 Info got called on: /api/data/filtered/userExamswith request body: 
+2022-08-23T02:10:02.362530845 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.366415127 Info got called on: /api/data/userChatFeedswith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.392429084 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.394790709 Info got called on: /api/data/userTypewith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.416611368 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.419028099 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:02.421349029 Info got called on: /api/data/userTypewith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:07.305857082 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:07.760906499 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:07.781756438 Info got called on: /api/data/messagewith request body: 2f50037a-3488-4997-aeff-1e239a420e1f
+2022-08-23T02:10:08.633083904 Info got called on: /api/data/userActiveCourseswith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:08.665420419 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:09.409772560 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:09.414201525 Info got called on: /api/data/filtered/requestswith request body: {
+  "userId": "b7e5a843-20d2-40a8-afe0-3fac497c473d",
+  "type": "assigner"
+}
+2022-08-23T02:10:09.422126456 Info got called on: /api/data/filtered/requestswith request body: {
+  "userId": "b7e5a843-20d2-40a8-afe0-3fac497c473d",
+  "type": "assignee"
+}
+2022-08-23T02:10:11.542608174 Info got called on: /api/auth/logoutwith request body: 
+2022-08-23T02:10:11.548225681 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:10:12.306071332 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:25.127028196 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:25.127028537 Info got called on: /api/auth/getCaptchawith request body: 
+2022-08-23T02:10:30.084474193 Info got called on: /api/statuswith request body: 
+2022-08-23T02:10:30.194378047 Info got called on: /api/auth/loginwith request body: {
+  "nationalId": "professor1",
+  "hashedPassword": "Y�G\u001a�\u0001\u0011*���Y��t��\u0011��\u0006�Y�����s���"
+}
+2022-08-23T02:10:30.197196790 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.203307593 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-23T02:10:30.207653489 Info got called on: /api/data/weeklyPlanwith request body: 
+2022-08-23T02:10:30.210215726 Info got called on: /api/data/filtered/userExamswith request body: 
+2022-08-23T02:10:30.223948988 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.227339583 Info got called on: /api/data/userChatFeedswith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.231233924 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.233301674 Info got called on: /api/data/userTypewith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.235932190 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.238131128 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.261042846 Info got called on: /api/data/userwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.263436191 Info got called on: /api/data/userLastLoginwith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:30.266064042 Info got called on: /api/data/userTypewith request body: b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-23T02:10:31.786305635 Info got called on: /api/auth/logoutwith request body: 
+2022-08-23T02:10:31.795275927 Info got called on: /api/auth/getCaptchawith request body: 

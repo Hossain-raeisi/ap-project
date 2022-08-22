@@ -24,8 +24,8 @@ public class RecommendationRequest {
     Label responseLabel;
 
     @FXML
-    public void initialize(){
-        for (FacultyData facultyData: front.services.model_handlers.RecommendationRequest.getFacultiesDadta()){
+    public void initialize() {
+        for (FacultyData facultyData : front.services.model_handlers.RecommendationRequest.getFacultiesDadta()) {
             facultyList.getItems().add(facultyData.name);
         }
 
@@ -38,7 +38,7 @@ public class RecommendationRequest {
         responseLabel.setVisible(false);
     }
 
-    public void facultySelected(String facultyName){
+    public void facultySelected(String facultyName) {
         professorList.getItems().clear();
         professorList.getItems().addAll(Objects.requireNonNull(front.services.model_handlers.RecommendationRequest.getProfessors(facultyName)));
 
@@ -49,12 +49,7 @@ public class RecommendationRequest {
         });
     }
 
-    public void requestButtonAction(ActionEvent ignoredActionEvent){
-        // todo : what?
-
-        String facultyName = facultyList.getSelectionModel().getSelectedItem();
-        String professorName = professorList.getSelectionModel().getSelectedItem();
-
+    public void requestButtonAction(ActionEvent ignoredActionEvent) {
         front.services.model_handlers.RecommendationRequest.requestRecommendation();
         responseLabel.setVisible(true);
     }

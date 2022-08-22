@@ -1,7 +1,7 @@
 package front.services.model_handlers;
 
-import front.commons.data_class.RequestData;
 import front.app.SceneControl;
+import front.commons.data_class.RequestData;
 import front.services.Client;
 
 public class RequestResponse {

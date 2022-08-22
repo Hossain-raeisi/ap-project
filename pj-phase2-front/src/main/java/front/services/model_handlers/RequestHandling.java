@@ -1,8 +1,8 @@
 package front.services.model_handlers;
 
+import front.app.SceneControl;
 import front.commons.data_class.RequestData;
 import front.commons.enums.RequestStatus;
-import front.app.SceneControl;
 import front.services.Client;
 
 public class RequestHandling {

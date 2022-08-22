@@ -193,11 +193,21 @@ public class Client {
             Control.authToken = String.valueOf(response.headers().firstValue("auth-token").stream().toArray()[0]);
             Control.userId = UUID.fromString(String.valueOf(response.headers().firstValue("user-id").stream().toArray()[0]));
 
+            ONLINE = true;
+            cacheOfflineModeRequests();
+
             return Control.authToken != null && !Control.authToken.equals("");
         } catch (Exception ignored) {
         }
 
         return false;
+    }
+
+    public void cacheOfflineModeRequests() {
+        getWeeklyPlan();
+        getUserActiveExams();
+        getCurrentUserData();
+        getCurrentUserChatFeeds();
     }
 
     public void logOut() {

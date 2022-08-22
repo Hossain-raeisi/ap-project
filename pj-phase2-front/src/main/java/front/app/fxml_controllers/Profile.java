@@ -1,9 +1,9 @@
 package front.app.fxml_controllers;
 
+import front.app.Util;
 import front.commons.data_class.ProfessorData;
 import front.commons.data_class.StudentData;
 import front.commons.data_class.UserData;
-import front.app.Util;
 import front.services.Client;
 import front.services.model_handlers.EditProfile;
 import javafx.event.ActionEvent;
@@ -49,8 +49,8 @@ public class Profile {
 
         UserData userData = client.getCurrentUserData();
 
-        // TODO
-//        pictureImage.setImage(Util.getImageFromAttachmentData(userData.imageData));
+        if (userData.imageData != null && userData.imageData.id != null)
+            pictureImage.setImage(Util.getImageFromAttachmentData(userData.imageData));
         nameLabel.setText(Util.getUserFullName(userData));
         emailLabel.setText(userData.email);
         phoneNumberLabel.setText(userData.phoneNumber);

@@ -3,7 +3,7 @@ package front.services;
 import front.Config;
 import front.commons.data_class.AttachmentData;
 
-import java.io.*;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 

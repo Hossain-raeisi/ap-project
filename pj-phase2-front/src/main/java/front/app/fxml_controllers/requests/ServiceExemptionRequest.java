@@ -17,7 +17,7 @@ public class ServiceExemptionRequest {
         changeLabelText(front.services.model_handlers.ServiceExemptionRequest.serviceExemptionResponse);
     }
 
-    public void changeLabelText(String text){
+    public void changeLabelText(String text) {
         responseLabel.setText(text);
     }
 }

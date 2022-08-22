@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class Logger {
     static String logsFilePath = ".\\resources\\info\\logs.txt";
 
-    public static void Error(String logInfo){
+    public static void Error(String logInfo) {
         String log = LocalDateTime.now().toString() + " Error " + logInfo;
         writeLogToFile(log);
     }

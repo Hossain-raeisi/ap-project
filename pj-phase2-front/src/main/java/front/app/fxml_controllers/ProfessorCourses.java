@@ -1,7 +1,7 @@
 package front.app.fxml_controllers;
 
-import front.commons.data_class.CourseData;
 import front.app.views.CourseView;
+import front.commons.data_class.CourseData;
 import front.services.model_handlers.CourseScores;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
