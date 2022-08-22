@@ -278,6 +278,8 @@ public class RawDataHandler {
             DataBase.entityManager.persist(professor);
             DataBase.entityManager.getTransaction().commit();
 
+            DataBase.addNewUserChatFeeds(professor.getId());
+
             Logger.Info("Created new professor");
 
         } catch (Exception e) {
@@ -294,7 +296,7 @@ public class RawDataHandler {
 
             Student student = new Student(
                     studentData.nationalId,
-                    "ssss", // TODO
+                    "placeholder",
                     studentData.email,
                     studentData.type
             );
@@ -315,6 +317,8 @@ public class RawDataHandler {
 
             DataBase.entityManager.persist(student);
             DataBase.entityManager.getTransaction().commit();
+
+            DataBase.addNewUserChatFeeds(student.getId());
 
             Logger.Info("Created new student");
 

@@ -23,6 +23,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import static spark.Spark.halt;
+
 public class DataBase {
 
     public static EntityManager entityManager;
@@ -276,5 +278,37 @@ public class DataBase {
         }
 
         return false;
+    }
+
+    public static void addNewUserChatFeeds(UUID userId) {
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var user = DataBase.entityManager.find(User.class, userId);
+
+            var contacts = user.getContacts();
+
+            for (var contact: contacts) {
+                var chatFeed = new ChatFeed(
+                        new ArrayList<>() {{
+                            add(user);
+                            add(contact);
+                        }},
+                        new ArrayList<>()
+                );
+                DataBase.entityManager.persist(chatFeed);
+            }
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated user password");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to update user password");
+            halt(500);
+        }
+
     }
 }
