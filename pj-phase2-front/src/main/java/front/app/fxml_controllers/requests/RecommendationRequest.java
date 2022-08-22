@@ -25,7 +25,7 @@ public class RecommendationRequest {
 
     @FXML
     public void initialize(){
-        for (FacultyData facultyData: front.services.util.RecommendationRequest.getFacultiesDadta()){
+        for (FacultyData facultyData: front.services.model_handlers.RecommendationRequest.getFacultiesDadta()){
             facultyList.getItems().add(facultyData.name);
         }
 
@@ -40,10 +40,10 @@ public class RecommendationRequest {
 
     public void facultySelected(String facultyName){
         professorList.getItems().clear();
-        professorList.getItems().addAll(Objects.requireNonNull(front.services.util.RecommendationRequest.getProfessors(facultyName)));
+        professorList.getItems().addAll(Objects.requireNonNull(front.services.model_handlers.RecommendationRequest.getProfessors(facultyName)));
 
         professorList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
-            front.services.util.RecommendationRequest.currentSelectedProfessorIndex = professorList.getSelectionModel().getSelectedIndex();
+            front.services.model_handlers.RecommendationRequest.currentSelectedProfessorIndex = professorList.getSelectionModel().getSelectedIndex();
             requestButton.setDisable(false);
             requestButton.setVisible(true);
         });
@@ -55,7 +55,7 @@ public class RecommendationRequest {
         String facultyName = facultyList.getSelectionModel().getSelectedItem();
         String professorName = professorList.getSelectionModel().getSelectedItem();
 
-        front.services.util.RecommendationRequest.requestRecommendation();
+        front.services.model_handlers.RecommendationRequest.requestRecommendation();
         responseLabel.setVisible(true);
     }
 

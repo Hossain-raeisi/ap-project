@@ -5,8 +5,8 @@ import front.commons.enums.CourseLevel;
 import front.commons.enums.UserType;
 import front.app.views.CourseView;
 import front.services.Client;
-import front.services.util.AddCourse;
-import front.services.util.EditCourse;
+import front.services.model_handlers.AddCourse;
+import front.services.model_handlers.EditCourse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -49,7 +49,7 @@ public class Courses {
     public void initialize() {
         var client = Client.getInstance();
 
-        for (CourseData courseData : front.services.util.Courses.coursesData) {
+        for (CourseData courseData : front.services.model_handlers.Courses.coursesData) {
             coursesListView.getItems().add((new CourseView(courseData)));
         }
 
@@ -69,7 +69,7 @@ public class Courses {
         String levelFilterString = levelFilterField.getText();
 
         if (nameFilter.equals("") && sizeFilterString.equals("") && facultyFilterString.equals("") && idFilterString.equals("") && levelFilterString.equals("")) {
-            front.services.util.Courses.showAllCourses();
+            front.services.model_handlers.Courses.showAllCourses();
             return;
         }
 
@@ -93,7 +93,7 @@ public class Courses {
             case "doctorate" -> levelFilter = CourseLevel.doctorate;
         }
 
-        front.services.util.Courses.showFilteredCourses(nameFilter, sizeFilter, facultyFilterString, idFilter, levelFilter);
+        front.services.model_handlers.Courses.showFilteredCourses(nameFilter, sizeFilter, facultyFilterString, idFilter, levelFilter);
     }
 
     public void editCourseButtonAction() {
@@ -109,7 +109,7 @@ public class Courses {
     }
 
     public void delCourseButtonAction() {
-        front.services.util.Courses.delCourse(courseIdField.getText());
-        front.services.util.Courses.showAllCourses();
+        front.services.model_handlers.Courses.delCourse(courseIdField.getText());
+        front.services.model_handlers.Courses.showAllCourses();
     }
 }

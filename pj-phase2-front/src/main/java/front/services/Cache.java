@@ -9,14 +9,14 @@ import java.util.UUID;
 
 public class Cache {
 
+    static HashMap<UUID, AttachmentData> attachments = new HashMap<>();
     // files cache
     public static AttachmentData getAttachment(UUID attachmentId) {
-        // todo
-        return null;
+        return attachments.get(attachmentId);
     }
 
     public static void addAttachmentToCache(AttachmentData attachmentData) {
-        // TODO
+        attachments.put(attachmentData.id, attachmentData);
     }
 
     // requests cache

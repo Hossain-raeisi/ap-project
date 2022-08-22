@@ -1,5 +1,6 @@
 package back.services;
 
+import back.Config;
 import back.database.DataBase;
 import back.models.Attachment;
 import back.models.course.*;
@@ -8,12 +9,11 @@ import back.models.messenger.ChatFeed;
 import back.models.messenger.Message;
 import back.models.request.Request;
 import back.models.security.Captcha;
-import back.models.users.User;
 import back.models.users.Professor;
 import back.models.users.Student;
+import back.models.users.User;
 import back.server.Server;
 import commons.data_class.*;
-import commons.data_class.AssignmentData;
 import commons.enums.AssignmentAcceptableTypes;
 
 import java.util.ArrayList;
@@ -104,7 +104,7 @@ public class RawDataHandler {
                 student.getType(),
                 new ArrayList<>(student.getActiveScores().stream().map(Score::getId).collect(Collectors.toList())),
                 new ArrayList<>(student.getPassedScores().stream().map(Score::getId).collect(Collectors.toList())),
-                student.getTotalGradePointAverage(),
+                Float.parseFloat(student.getTotalGradePointAverage().toString()),
                 student.getStaringYear(),
                 student.getMajor(),
                 student.getStudentNumber()
@@ -162,7 +162,7 @@ public class RawDataHandler {
 
         return new AttachmentData(
                 attachment.getId(),
-                FileHandler.readFile(attachment.getFileName()),
+                FileHandler.readFile(Config.BASE_FILES_PATH + attachment.getFileName()),
                 attachment.getFileName()
         );
     }
@@ -237,7 +237,8 @@ public class RawDataHandler {
                 assignmentAnswer.getStudent().getId(),
                 assignmentAnswer.getAttachment().getId(),
                 assignmentAnswer.getText(),
-                assignmentAnswer.getSentTime()
+                assignmentAnswer.getSentTime(),
+                assignmentAnswer.getScore()
         );
     }
 
@@ -328,7 +329,7 @@ public class RawDataHandler {
     public static void createCourse(CourseData courseData) {
         try {
             DataBase.entityManager.getTransaction().begin();
-            
+
             Course course = new Course(
                     courseData.name,
                     DataBase.entityManager.find(Faculty.class, courseData.facultyId),
@@ -384,14 +385,14 @@ public class RawDataHandler {
         try {
             DataBase.entityManager.getTransaction().begin();
 
-            var fileExtension = attachmentData.fileName.split("/.")[attachmentData.fileName.split("/.").length - 1];
+            var fileExtension = attachmentData.fileName.split("[.]")[attachmentData.fileName.split("[.]").length - 1];
 
             Attachment attachment = new Attachment();
-
-            FileHandler.writeFile(attachmentData.data, attachment.getId() + "." + fileExtension);
-
             DataBase.entityManager.persist(attachment);
+            attachment.setFileName(attachment.getId().toString() + "." + fileExtension);
             DataBase.entityManager.getTransaction().commit();
+
+            FileHandler.writeFile(attachmentData.data, Config.BASE_FILES_PATH + attachment.getId() + "." + fileExtension);
 
             Logger.Info("created new attachment");
 
@@ -488,30 +489,218 @@ public class RawDataHandler {
     }
 
     public static void updateFaculty(FacultyData facultyData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var faculty = DataBase.entityManager.find(Faculty.class, facultyData.id);
+
+            if (facultyData.deputyEducationProfessorId == null) {
+                faculty.setDeputyEducationProfessor(null);
+            } else {
+                faculty.setDeputyEducationProfessor(
+                        DataBase.entityManager.find(Professor.class, facultyData.deputyEducationProfessorId)
+                );
+            }
+
+            if (facultyData.facultyHeadProfessorId != null) {
+                faculty.setFacultyHeadProfessor(
+                        DataBase.entityManager.find(Professor.class, facultyData.facultyHeadProfessorId)
+                );
+            }
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("created new attachment");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to create new attachment");
+            halt(500);
+        }
     }
 
     public static void updateScore(ScoreData scoreData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var score = DataBase.entityManager.find(Score.class, scoreData.id);
+            if (scoreData.temporaryScore != null)
+                score.setTemporaryScore(scoreData.temporaryScore);
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("created new attachment");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to create new attachment");
+            halt(500);
+        }
     }
 
     public static void updateUser(UserData userData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var user = DataBase.entityManager.find(User.class, userData.id);
+
+            if (userData.email != null && !userData.email.equals(user.getEmail()))
+                user.setEmail(userData.email);
+
+            if (userData.phoneNumber != null && !userData.phoneNumber.equals(user.getPhoneNumber()))
+                user.setEmail(userData.phoneNumber);
+
+            if (userData.imageData != null
+                    && userData.imageData.id != null
+                    && !userData.imageData.id.equals(user.getImage().getId()))
+                user.setImage(DataBase.entityManager.find(Attachment.class, userData.imageData.id));
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated user");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to update user");
+            halt(500);
+        }
     }
 
     public static void updateProfessor(ProfessorData professorData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var professor = DataBase.entityManager.find(Professor.class, professorData.id);
+
+            if (professorData.firstName != null && !professorData.firstName.equals(professor.getFirstName()))
+                professor.setFirstName(professorData.firstName);
+
+            if (professorData.lastName != null && !professorData.lastName.equals(professor.getLastName()))
+                professor.setLastName(professorData.lastName);
+
+            if (professorData.facultyName != null && !professorData.facultyName.equals(professor.getFaculty().getName()))
+                professor.setFaculty(DataBase.getFacultyByName(professorData.facultyName));
+
+            if (professorData.email != null && !professorData.email.equals(professor.getEmail()))
+                professor.setEmail(professorData.email);
+
+            if (professorData.nationalId != null && !professorData.nationalId.equals(professor.getNationalId()))
+                professor.setNationalId(professorData.nationalId);
+
+            if (professorData.phoneNumber != null && !professorData.phoneNumber.equals(professor.getPhoneNumber()))
+                professor.setPhoneNumber(professorData.phoneNumber);
+
+            if (professorData.rank != null && !professorData.rank.equals(professor.getRank()))
+                professor.setRank(professorData.rank);
+
+            if (professorData.imageData != null
+                    && professorData.imageData.id != null
+                    && !professorData.imageData.id.equals(professor.getImage().getId()))
+                professor.setImage(DataBase.entityManager.find(Attachment.class, professorData.imageData.id));
+
+            if (professorData.roomNumber != null && !professorData.roomNumber.equals(professor.getRoomNumber()))
+                professor.setRoomNumber(professorData.roomNumber);
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated course");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to Update course");
+            halt(500);
+        }
     }
 
     public static void updateCourse(CourseData courseData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var course = DataBase.entityManager.find(Course.class, courseData.id);
+
+            if (courseData.temporaryScoresSet != null && courseData.temporaryScoresSet)
+                course.setTemporaryScoresSet(true);
+
+            if (courseData.facultyId != null && !courseData.facultyId.equals(course.getFaculty().getId()))
+                course.setFaculty(DataBase.entityManager.find(Faculty.class, courseData.facultyId));
+
+            if (courseData.name != null && !courseData.name.equals(course.getName()))
+                course.setName(courseData.name);
+
+            if (courseData.professorId != null && !courseData.professorId.equals(course.getProfessor().getId()))
+                course.setProfessor(DataBase.entityManager.find(Professor.class, courseData.professorId));
+
+            if (courseData.size != null && !courseData.size.equals(course.getSize()))
+                course.setSize(courseData.size);
+
+            if (courseData.level != null && !courseData.level.equals(course.getLevel()))
+                course.setLevel(courseData.level);
+
+            if (courseData.level != null && !courseData.level.equals(course.getLevel()))
+                course.setLevel(courseData.level);
+
+            if (courseData.weekDays != null && courseData.weekDays.size() != 0 && !courseData.weekDays.equals(course.getWeekDays()))
+                course.setWeekDays(courseData.weekDays);
+
+            if (courseData.time != null && !courseData.time.equals(course.getTime()))
+                course.setTime(courseData.time);
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated course");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to Update course");
+            halt(500);
+        }
     }
 
     public static void updatePassword(PasswordChangeData passwordChangeData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var user = DataBase.entityManager.find(User.class, passwordChangeData.userId);
+            user.setPassword(passwordChangeData.hashedPassword);
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated user password");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to update user password");
+            halt(500);
+        }
     }
 
     public static void updateEducationalContent(EducationalContentData educationalContentData) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            var educationalContent = DataBase.entityManager.find(EducationalContent.class, educationalContentData.id);
+
+            educationalContent.setTexts(educationalContentData.texts);
+            educationalContent.getMedias().clear();
+            educationalContent.setMedias(new ArrayList<>() {{
+                addAll(educationalContentData.attachmentsId.stream().map(id -> DataBase.entityManager.find(Attachment.class, id)).toList());
+            }});
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("Updated educational content");
+
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Failed to update educational content");
+            halt(500);
+        }
     }
 }

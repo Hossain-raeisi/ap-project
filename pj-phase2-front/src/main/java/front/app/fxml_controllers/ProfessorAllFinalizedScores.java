@@ -11,7 +11,7 @@ public class ProfessorAllFinalizedScores {
 
     @FXML
     public void initialize() {
-        for (ScoreData scoreData : front.services.util.ProfessorAllFinalizedScores.getProfessorAllFinalizedScoreData()) {
+        for (ScoreData scoreData : front.services.model_handlers.ProfessorAllFinalizedScores.getProfessorAllFinalizedScoreData()) {
             scoresListView.getItems().add(scoreData.courseName + "     " +
                     scoreData.studentName + "     " + scoreData.finalScore);
         }

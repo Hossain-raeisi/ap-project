@@ -2,7 +2,6 @@ package front.app.fxml_controllers;
 
 import front.services.Client;
 import front.services.FileHandler;
-import front.services.util.EducationalContent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,12 +22,12 @@ public class EducationalContentItem {
     Button setMediaButton;
 
     public void setTextButtonAction(ActionEvent actionEvent) {
-        front.services.util.EducationalContentItem.updateEducationalContentItem(textField.getText());
+        front.services.model_handlers.EducationalContentItem.updateEducationalContentItem(textField.getText());
     }
 
     public void setMediaButtonAction(ActionEvent actionEvent) {
         var attachmentData = FileHandler.getAttachmentDataFromPath(filePathField.getText());
         attachmentData.id = Client.getInstance().addAttachments(new ArrayList<>() {{add(attachmentData);}}).get(0);
-        front.services.util.EducationalContentItem.updateEducationalContentItem(attachmentData);
+        front.services.model_handlers.EducationalContentItem.updateEducationalContentItem(attachmentData);
     }
 }

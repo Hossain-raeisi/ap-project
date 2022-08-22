@@ -1,23 +1,21 @@
 package front.app.fxml_controllers;
 
+import front.app.views.AssignmentView;
 import front.app.views.EducationalContentView;
 import front.app.views.ExamView;
-import front.app.views.AssignmentView;
 import front.commons.data_class.AddStudentsData;
 import front.services.Client;
-import front.services.util.Assignment;
-import front.services.util.EducationalContent;
-import front.services.util.Exams;
+import front.services.model_handlers.Assignment;
+import front.services.model_handlers.EducationalContent;
+import front.services.model_handlers.Exams;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Course {
 
@@ -42,7 +40,7 @@ public class Course {
 
     @FXML
     public void initialize() {
-        var courseData = front.services.util.Course.getCurrentCourseData();
+        var courseData = front.services.model_handlers.Course.getCurrentCourseData();
         var client = Client.getInstance();
 
         if (!courseData.professorId.equals(client.getCurrentUserData().id)) {
@@ -92,40 +90,44 @@ public class Course {
     }
 
     public void newEducationalContentButtonAction(ActionEvent ignoredActionEvent) {
-        EducationalContent.showNewEducationalContentPage(front.services.util.Course.getCurrentCourseData().id.toString());
+        EducationalContent.showNewEducationalContentPage(front.services.model_handlers.Course.getCurrentCourseData().id.toString());
     }
 
     public void newAssignmentButtonAction(ActionEvent ignoredActionEvent) {
-        Assignment.showNewAssignmentPage(front.services.util.Course.getCurrentCourseData().id.toString());
+        Assignment.showNewAssignmentPage(front.services.model_handlers.Course.getCurrentCourseData().id.toString());
     }
 
     public void newExamButtonAction(ActionEvent ignoredActionEvent) {
-        Exams.showNewExamPage(front.services.util.Course.getCurrentCourseData().id.toString());
+        Exams.showNewExamPage(front.services.model_handlers.Course.getCurrentCourseData().id.toString());
     }
 
     public void addStudentButtonAction(ActionEvent ignoredActionEvent) {
-        var courseData = front.services.util.Course.getCurrentCourseData();
+        var courseData = front.services.model_handlers.Course.getCurrentCourseData();
         var studentId = UUID.fromString(studentIdField.getText());
 
         var addStudentsData = new AddStudentsData(
                 courseData.id,
-                new ArrayList<>() {{add(studentId);}}
+                new ArrayList<>() {{
+                    add(studentId);
+                }}
         );
         Client.getInstance().addStudentToCourse(addStudentsData);
 
-        front.services.util.Course.showPage(courseData.id.toString());
+        front.services.model_handlers.Course.showPage(courseData.id.toString());
     }
 
     public void addTAButtonAction(ActionEvent ignoredActionEvent) {
-        var courseData = front.services.util.Course.getCurrentCourseData();
+        var courseData = front.services.model_handlers.Course.getCurrentCourseData();
         var TAId = UUID.fromString(studentIdField.getText());
 
         var addTAsData = new AddStudentsData(
                 courseData.id,
-                new ArrayList<>() {{add(TAId);}}
+                new ArrayList<>() {{
+                    add(TAId);
+                }}
         );
         Client.getInstance().addTAToCourse(addTAsData);
 
-        front.services.util.Course.showPage(courseData.id.toString());
+        front.services.model_handlers.Course.showPage(courseData.id.toString());
     }
 }

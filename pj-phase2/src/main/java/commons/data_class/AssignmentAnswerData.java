@@ -13,9 +13,10 @@ public class AssignmentAnswerData {
     public UUID attachmentId;
     public String text;
     public LocalDateTime sentTime;
+    public Float score;
 
     public AssignmentAnswerData(UUID id, String assignmentName, UUID assignmentId, String studentName, UUID studentId,
-                                UUID attachmentId, String text, LocalDateTime sentTime) {
+                                UUID attachmentId, String text, LocalDateTime sentTime, Float score) {
         this.id = id;
         this.assignmentName = assignmentName;
         this.assignmentId = assignmentId;
@@ -24,5 +25,6 @@ public class AssignmentAnswerData {
         this.attachmentId = attachmentId;
         this.text = text;
         this.sentTime = sentTime;
+        this.score = score;
     }
 }

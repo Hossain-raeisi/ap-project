@@ -7,7 +7,7 @@ import front.commons.enums.StudentEducationalStatus;
 import front.commons.enums.StudentType;
 import front.services.Client;
 import front.services.security.Utils;
-import front.services.util.AddUser;
+import front.services.model_handlers.AddUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

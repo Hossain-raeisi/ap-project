@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="front.app.fxml_controllers.Assignment"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.Assignment">
+
+    <fx:include source="header.fxml" />
+   <Label fx:id="nameLabel" layoutX="71.0" layoutY="166.0" text="name">
+      <font>
+         <Font name="System Bold Italic" size="18.0" />
+      </font>
+   </Label>
+   <TextArea fx:id="descriptionArea" disable="true" layoutX="71.0" layoutY="215.0" prefHeight="174.0" prefWidth="890.0" />
+   <Label layoutX="1156.0" layoutY="215.0" text="start time:">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="startTimeLabel" layoutX="1326.0" layoutY="215.0" text="Label">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+
+   <Label layoutX="1156.0" layoutY="240.0" text="full score time:">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="fullScoreTimeLabel" layoutX="1326.0" layoutY="240.0" text="Label">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+
+   <Label layoutX="1156.0" layoutY="265.0" text="end time:">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="endTimeLabel" layoutX="1326.0" layoutY="265.0" text="Label">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+
+   <ListView fx:id="studentsAnswers" fixedCellSize="50.0" layoutX="71.0" layoutY="401.0" opacity="0.72" prefHeight="620.0" prefWidth="1058.0" />
+   <TextArea fx:id="textAnswerField" layoutX="1204.0" layoutY="389.0" prefHeight="207.0" prefWidth="633.0" promptText="enter answer" />
+   <TextField fx:id="filePathField" layoutX="1204.0" layoutY="596.0" prefHeight="24.0" prefWidth="633.0" promptText="enter file absolute path" />
+   <Button fx:id="sendAnswerButton" layoutX="1736.0" layoutY="627.0" mnemonicParsing="false" onAction="#sendAnswerButtonAction" text="send answer" />
+
 
 </AnchorPane>

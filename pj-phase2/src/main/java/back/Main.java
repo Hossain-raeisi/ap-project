@@ -1,15 +1,21 @@
 package back;
 
 import back.database.DataBase;
+import back.models.Attachment;
 import back.models.course.*;
 import back.models.faculty.Faculty;
 import back.models.messenger.ChatFeed;
+import back.models.security.Captcha;
 import back.models.users.Professor;
 import back.models.users.Student;
 import back.models.users.User;
 import back.server.Server;
+import back.services.FileHandler;
+import back.services.RawDataHandler;
+import commons.data_class.AttachmentData;
 import commons.enums.*;
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,19 +27,57 @@ public class Main {
     static EntityManager entityManager;
 
     public static void main(String[] args) {
-//        Config.loadConfig();
+        Config.loadConfig();
         DataBase.run();
         var server = Server.getInstance();
-        server.start(5555);
+        server.start(Config.SERVER_PORT);
+    }
+
+    public static void loadCaptchas() {
+        String[] fileNames = new String[]{"1003", "3270", "3632", "4838", "5132", "6106", "6416", "8871"};
+        String basePath = "src/main/resources/images/captchas/";
+
+        for (var fileName: fileNames) {
+            var bytes = FileHandler.readFile(basePath + fileName + ".jpg");
+
+            var attachmentData = new AttachmentData(
+                    null,
+                    bytes,
+                    ".jpg"
+            );
+            var attachment = RawDataHandler.createAttachment(attachmentData);
+
+            DataBase.entityManager.getTransaction().begin();
+            var captcha = new Captcha(
+                    fileName,
+                    attachment
+            );
+            DataBase.entityManager.persist(captcha);
+            DataBase.entityManager.getTransaction().commit();
+
+        }
+    }
+
+    public static void loadMuckAttachment() {
+        var bytes = FileHandler.readFile("src/main/resources/images/captchas/1003.jpg");
+        var fileName = "image.png";
+
+        var attachmentData = new AttachmentData(
+                null,
+                bytes,
+                fileName
+        );
+        var attachment = RawDataHandler.createAttachment(attachmentData);
+        System.out.println(attachment.getId());
     }
 
     public static void loadMockData() {
 
-        try{
+        try {
             DataBase.entityManager.getTransaction().begin();
 
             Faculty mathFaculty = new Faculty("math");
-            mathFaculty.setMajors(new ArrayList<>(){
+            mathFaculty.setMajors(new ArrayList<>() {
                 {
                     add("math");
                     add("cs");
@@ -73,14 +117,14 @@ public class Main {
 //            DataBase.em.merge(deputyEducation);
 
             DataBase.entityManager.getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             DataBase.entityManager.getTransaction().rollback();
             e.printStackTrace();
         }
     }
 
     public static void loadMockStudents() {
-        try{
+        try {
             DataBase.entityManager.getTransaction().begin();
 
             Faculty mathFaculty = DataBase.entityManager.find(Faculty.class, UUID.fromString("a6c3756c-4e20-4f0a-885e-0e0503f73da6"));
@@ -102,14 +146,14 @@ public class Main {
 
             DataBase.entityManager.persist(student);
             DataBase.entityManager.getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             DataBase.entityManager.getTransaction().rollback();
             e.printStackTrace();
         }
     }
 
-    public static void loadMuckCourse(){
-        try{
+    public static void loadMuckCourse() {
+        try {
             DataBase.entityManager.getTransaction().begin();
 
             Faculty mathFaculty = DataBase.entityManager.find(Faculty.class, UUID.fromString("a6c3756c-4e20-4f0a-885e-0e0503f73da6"));
@@ -134,14 +178,14 @@ public class Main {
 
             DataBase.entityManager.persist(score);
             DataBase.entityManager.getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             DataBase.entityManager.getTransaction().rollback();
             e.printStackTrace();
         }
     }
 
-    public static void loadMuckEduContentAndAssignmentAndExam(){
-        try{
+    public static void loadMuckEduContentAndAssignmentAndExam() {
+        try {
             DataBase.entityManager.getTransaction().begin();
 
             Course course = DataBase.entityManager.find(Course.class, UUID.fromString("81784b33-c834-4523-9d5a-64d825c367ad"));
@@ -169,7 +213,11 @@ public class Main {
 
             EducationalContent educationalContent = new EducationalContent(
                     "first educational content",
-                    new ArrayList<>() {{add("text 1"); add("text 2"); add("text 3");}},
+                    new ArrayList<>() {{
+                        add("text 1");
+                        add("text 2");
+                        add("text 3");
+                    }},
                     new ArrayList<>(),
                     course
             );
@@ -177,14 +225,14 @@ public class Main {
             DataBase.entityManager.persist(educationalContent);
 
             DataBase.entityManager.getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             DataBase.entityManager.getTransaction().rollback();
             e.printStackTrace();
         }
     }
 
     public static void loadMuckChat() {
-        try{
+        try {
             DataBase.entityManager.getTransaction().begin();
 
             var user1 = DataBase.entityManager.find(User.class, UUID.fromString("b7e5a843-20d2-40a8-afe0-3fac497c473d"));
@@ -202,13 +250,13 @@ public class Main {
 
             DataBase.entityManager.persist(chatFeed);
             DataBase.entityManager.getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             DataBase.entityManager.getTransaction().rollback();
             e.printStackTrace();
         }
     }
 
-    public static void test(){
+    public static void test() {
         DataBase.entityManager.getTransaction().begin();
         Course course = DataBase.entityManager.find(Course.class, UUID.fromString("81784b33-c834-4523-9d5a-64d825c367ad"));
         course.setWeekDays(new ArrayList<>() {{

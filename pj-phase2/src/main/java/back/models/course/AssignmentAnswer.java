@@ -42,6 +42,9 @@ public class AssignmentAnswer {
     @Temporal(TemporalType.TIMESTAMP)
     LocalDateTime sentTime;
 
+    @Column
+    Float score;
+
     private AssignmentAnswer() {
     }
 
@@ -98,5 +101,13 @@ public class AssignmentAnswer {
 
     public void setSentTime(LocalDateTime sentTime) {
         this.sentTime = sentTime;
+    }
+
+    public Float getScore() {
+        return score;
+    }
+
+    public void setScore(Float score) {
+        this.score = score;
     }
 }

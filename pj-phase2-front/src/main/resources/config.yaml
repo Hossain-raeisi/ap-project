@@ -1,2 +1,2 @@
 SERVER_ADDRESS: "http://localhost:5555/api"
-MEDIA_BASE_PATH: "/home/hossein/projects/code/code/AP_Java/pj-phase2-front/src/main/resources/media/"
+MEDIA_BASE_PATH: "src/main/resources/media/"

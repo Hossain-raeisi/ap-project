@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.app.fxml_controllers.AssignmentAnswer">
+
+    <fx:include source="header.fxml" />
+   <Label fx:id="assignmentAnswerPath" layoutX="81.0" layoutY="178.0" prefHeight="16.0" prefWidth="457.0" text="assignmentAnswer">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <TextField fx:id="scoreField" layoutX="1335.0" layoutY="177.0" />
+   <TextArea fx:id="assignmentAnswerTextField" disable="true" layoutX="81.0" layoutY="211.0" prefHeight="566.0" prefWidth="880.0" text="assignmentAnswer" />
+   <Button fx:id="scoreRegisterButton" layoutX="1513.0" layoutY="177.0" mnemonicParsing="false" onAction="#scoreRegisterButtonAction" text="register" />
+
+</AnchorPane>

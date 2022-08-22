@@ -21,7 +21,7 @@ public class ScoreObjectionRequest {
 
     @FXML
     public void initialize(){
-        ScoreData scoreData = front.services.util.ScoreObjectionRequest.getScoreData();
+        ScoreData scoreData = front.services.model_handlers.ScoreObjectionRequest.getScoreData();
         courseNameLabel.setText(scoreData.courseName);
         courseScoreLabel.setText(String.valueOf(scoreData.finalScore));
     }
@@ -29,8 +29,8 @@ public class ScoreObjectionRequest {
     public void objectButtonAction(ActionEvent ignoredActionEvent) {
         var client = Client.getInstance();
 
-        front.services.util.ScoreObjectionRequest.object(objectionTextArea.getText());
-        front.services.util.TemporaryScores.showPage( client.getStudentData(client.getCurrentUserData().id));
+        front.services.model_handlers.ScoreObjectionRequest.object(objectionTextArea.getText());
+        front.services.model_handlers.TemporaryScores.showPage( client.getStudentData(client.getCurrentUserData().id));
     }
 
 }

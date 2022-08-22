@@ -2,7 +2,7 @@ package front.app.fxml_controllers;
 
 import front.commons.data_class.ExamData;
 import front.services.Client;
-import front.services.util.Exams;
+import front.services.model_handlers.Exams;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

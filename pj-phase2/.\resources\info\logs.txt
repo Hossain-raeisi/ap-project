@@ -376,3 +376,42 @@
 2022-08-21T13:54:46.129118642 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
 2022-08-21T13:55:55.450901172 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
 2022-08-21T13:55:55.451138201 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-21T17:54:16.553670634 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-21T17:54:16.554504081 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-21T18:05:08.969932826 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-21T18:05:08.970078597 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-21T18:07:41.673677380 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-21T18:07:41.673854961 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:11:26.276852108 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:11:26.277356464 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:12:50.439761955 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:12:50.440201026 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:13:18.672218932 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:13:18.672732985 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:15:48.849215324 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:15:48.849688049 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:16:48.464716840 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:16:48.465141263 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T00:18:33.813053943 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T00:18:33.813510157 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T21:14:05.166802941 Error Failed to create new attachment
+2022-08-22T21:23:18.500960558 Info created new attachment
+2022-08-22T21:23:48.001603796 Info created new attachment
+2022-08-22T21:25:50.351918483 Info created new attachment
+2022-08-22T21:26:45.802260698 Info created new attachment
+2022-08-22T21:57:32.091616232 Info created new attachment
+2022-08-22T21:57:32.095415744 Info created new attachment
+2022-08-22T21:57:32.098049616 Info created new attachment
+2022-08-22T21:57:32.100613095 Info created new attachment
+2022-08-22T21:57:32.104792846 Info created new attachment
+2022-08-22T21:57:32.107737939 Info created new attachment
+2022-08-22T21:57:32.110273776 Info created new attachment
+2022-08-22T21:57:32.112908059 Info created new attachment
+2022-08-22T21:58:48.499611001 Info created new attachment
+2022-08-22T21:58:48.502818107 Info created new attachment
+2022-08-22T21:58:48.505136079 Info created new attachment
+2022-08-22T21:58:48.507566824 Info created new attachment
+2022-08-22T21:58:48.511097735 Info created new attachment
+2022-08-22T21:58:48.513497672 Info created new attachment
+2022-08-22T21:58:48.515705515 Info created new attachment
+2022-08-22T21:58:48.518919444 Info created new attachment

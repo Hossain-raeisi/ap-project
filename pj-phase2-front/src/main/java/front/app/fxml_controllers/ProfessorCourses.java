@@ -2,7 +2,7 @@ package front.app.fxml_controllers;
 
 import front.commons.data_class.CourseData;
 import front.app.views.CourseView;
-import front.services.util.CourseScores;
+import front.services.model_handlers.CourseScores;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -14,7 +14,7 @@ public class ProfessorCourses {
     ListView<Pane> coursesListView;
 
     public void initialize() {
-        for (CourseData courseData : front.services.util.ProfessorCourses.getProfessorCoursesData()) {
+        for (CourseData courseData : front.services.model_handlers.ProfessorCourses.getProfessorCoursesData()) {
             coursesListView.getItems().add((new CourseView(courseData)));
         }
 

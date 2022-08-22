@@ -21,6 +21,7 @@ public class FileHandler {
                     data
             );
         } catch (IOException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

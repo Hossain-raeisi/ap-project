@@ -27,7 +27,7 @@ public class CourseDescription {
 
     @FXML
     public void initialize(){
-        CourseData courseData = front.services.util.CourseDescription.getCourseData();
+        CourseData courseData = front.services.model_handlers.CourseDescription.getCourseData();
 
         courseNameField.setText(courseData.name);
 

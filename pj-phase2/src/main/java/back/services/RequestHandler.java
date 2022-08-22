@@ -4,6 +4,7 @@ import back.database.DataBase;
 import back.database.Strings;
 import back.models.course.Score;
 import back.models.faculty.Faculty;
+import back.models.messenger.ChatFeed;
 import back.models.request.Request;
 import back.models.users.Professor;
 import back.models.users.Student;
@@ -178,7 +179,32 @@ public class RequestHandler {
     }
 
     public static void chatRequest(User sender, User receiver) {
-        // TODO
+        try {
+            DataBase.entityManager.getTransaction().begin();
+
+            Request newChatRequest = new Request(
+                    sender,
+                    new ArrayList<>(){
+                        {
+                            add(receiver);
+                        }
+                    },
+                    sender.getFullName() + " chat request to " + receiver.getFullName(),
+                    "",
+                    RequestType.chatRequest
+            );
+
+            DataBase.entityManager.persist(newChatRequest);
+
+            DataBase.entityManager.getTransaction().commit();
+
+            Logger.Info("New objection request with id: " + newChatRequest.getId());
+        } catch (Exception e) {
+            DataBase.entityManager.getTransaction().rollback();
+            e.printStackTrace();
+            Logger.Error("Couldn't create objection request");
+        }
+
     }
 
     public static void approveRequest(User approver, Request request, String responseText) {
@@ -199,7 +225,17 @@ public class RequestHandler {
             }
 
             if (request.getType() == RequestType.chatRequest) {
-                // TODO
+                var chatFeed = new ChatFeed(
+                        new ArrayList<>() {
+                            {
+                            add(request.getAssigner());
+                            addAll(request.getAssignees());
+                            }
+                        },
+                        new ArrayList<>()
+                );
+
+                DataBase.entityManager.persist(chatFeed);
             }
 
             request.setResponse(responseText);

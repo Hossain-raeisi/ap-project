@@ -28,7 +28,7 @@ public class EducationalStatusDeputyEducationProfessor {
 
     @FXML
     public void initialize() {
-        for (StudentData studentData : front.services.util.EducationalStatus.getStudentsData()) {
+        for (StudentData studentData : front.services.model_handlers.EducationalStatus.getStudentsData()) {
             studentsList.getItems().add(new StudentEducationalStatusView(studentData));
         }
 
@@ -45,7 +45,7 @@ public class EducationalStatusDeputyEducationProfessor {
         String studentNumberFilter = studentNumberFilterField.getText();
 
         if (nameFilter.equals("") && studentNumberFilter.equals("")) {
-            front.services.util.EducationalStatus.showPage();
+            front.services.model_handlers.EducationalStatus.showPage();
             return;
         }
 
@@ -54,7 +54,7 @@ public class EducationalStatusDeputyEducationProfessor {
         if (studentNumberFilter.equals(""))
             studentNumberFilter = null;
 
-        showFilteredStudents(front.services.util.EducationalStatus.getFilteredStudents(nameFilter, studentNumberFilter));
+        showFilteredStudents(front.services.model_handlers.EducationalStatus.getFilteredStudents(nameFilter, studentNumberFilter));
     }
 
     public void showFilteredStudents(ArrayList<StudentData> studentsData) {
@@ -69,6 +69,6 @@ public class EducationalStatusDeputyEducationProfessor {
     }
 
     public void showStudentEducationalStatus(UUID studentId) {
-        front.services.util.EducationalStatus.showPageStudent(Client.getInstance().getStudentData(studentId));
+        front.services.model_handlers.EducationalStatus.showPageStudent(Client.getInstance().getStudentData(studentId));
     }
 }

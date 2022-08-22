@@ -2,7 +2,7 @@ package front.app.fxml_controllers;
 
 import front.app.views.ContactView;
 import front.services.Client;
-import front.services.util.Messenger;
+import front.services.model_handlers.Messenger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

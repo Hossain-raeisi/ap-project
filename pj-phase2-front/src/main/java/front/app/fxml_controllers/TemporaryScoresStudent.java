@@ -1,8 +1,8 @@
 package front.app.fxml_controllers;
 
 import front.commons.data_class.ScoreData;
-import front.services.util.ScoreObjectionRequest;
-import front.services.util.TemporaryScores;
+import front.services.model_handlers.ScoreObjectionRequest;
+import front.services.model_handlers.TemporaryScores;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 

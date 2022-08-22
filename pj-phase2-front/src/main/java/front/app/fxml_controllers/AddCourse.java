@@ -62,6 +62,6 @@ public class AddCourse {
 
         client.addCourse(newCourseData);
 
-        front.services.util.AddCourse.showPage();
+        front.services.model_handlers.AddCourse.showPage();
     }
 }

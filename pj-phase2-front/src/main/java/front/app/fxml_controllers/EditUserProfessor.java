@@ -39,7 +39,7 @@ public class EditUserProfessor {
     TextField roomNumberField;
 
     public void editProfessorButtonAction() {
-        ProfessorData professorData = front.services.util.EditUserProfessor.getCurrentProfessorData();
+        ProfessorData professorData = front.services.model_handlers.EditUserProfessor.getCurrentProfessorData();
 
         String firstName = firstNameField.getText();
         if (!firstName.equals("")){

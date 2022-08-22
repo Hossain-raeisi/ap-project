@@ -14,9 +14,8 @@ import java.util.UUID;
 @Entity
 @Table(
         indexes = {
-                @Index(columnList = "course_id"),
-                @Index(columnList = "faculty"),
-                @Index(columnList = "professor"),
+                @Index(columnList = "faculty_id"),
+                @Index(columnList = "professor_id"),
                 @Index(columnList = "level"),
                 @Index(columnList = "archived"),
         }

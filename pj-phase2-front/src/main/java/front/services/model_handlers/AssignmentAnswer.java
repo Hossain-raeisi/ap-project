@@ -17,6 +17,10 @@ public class AssignmentAnswer {
         SceneControl.changeScene(SceneControl.SceneType.assignmentAnswerPage);
     }
 
+    public static AssignmentAnswerData getCurrentAssignmentAnswerData() {
+        return Client.getInstance().getAssignmentAnswerData(assignmentAnswerId);
+    }
+
     public static void addAnswer(UUID assignmentId, String answerText) {
         var client = Client.getInstance();
         var assignmentData = client.getAssignmentData(assignmentId);
@@ -39,5 +43,12 @@ public class AssignmentAnswer {
                 null
         );
         client.addAssignmentAnswer(assignmentAnswerData);
+    }
+
+    public static void setScore(Float score) {
+        var client = Client.getInstance();
+        var assignmentAnswerData = client.getAssignmentAnswerData(assignmentAnswerId);
+        assignmentAnswerData.score = score;
+        client.updateAssignmentAnswer(assignmentAnswerData);
     }
 }

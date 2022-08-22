@@ -3,8 +3,8 @@ package front.app.fxml_controllers.requests;
  import front.commons.data_class.RequestData;
  import front.app.views.AssigneeRequestView;
 import front.app.views.AssignerRequestView;
-import front.services.util.RequestHandling;
-import front.services.util.RequestResponse;
+import front.services.model_handlers.RequestHandling;
+import front.services.model_handlers.RequestResponse;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -19,7 +19,7 @@ public class Requests {
 
     @FXML
     public void initialize(){
-        for (RequestData requestData: front.services.util.Requests.getUserAssignerRequestsData()){
+        for (RequestData requestData: front.services.model_handlers.Requests.getUserAssignerRequestsData()){
             assignerRequests.getItems().add(new AssignerRequestView(requestData));
         }
 
@@ -27,7 +27,7 @@ public class Requests {
                 (observableValue, pane, t1) -> assignerRequestSelected(((Label)assignerRequests.getSelectionModel().getSelectedItem().getChildren().get(3)).getText())
         );
 
-        for (RequestData requestData: front.services.util.Requests.getUserAssigneeRequestsData()){
+        for (RequestData requestData: front.services.model_handlers.Requests.getUserAssigneeRequestsData()){
             assigneeRequests.getItems().add(new AssigneeRequestView(requestData));
         }
 

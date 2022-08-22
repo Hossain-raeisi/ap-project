@@ -26,7 +26,7 @@ public class MinorRequest {
 
     @FXML
     public void initialize(){
-        for (FacultyData facultyData: front.services.util.MinorRequest.getFaculties()){
+        for (FacultyData facultyData: front.services.model_handlers.MinorRequest.getFaculties()){
             facultyList.getItems().add(facultyData.name);
         }
 
@@ -41,7 +41,7 @@ public class MinorRequest {
 
     public void facultySelected(String facultyName){
         minorList.getItems().clear();
-        minorList.getItems().addAll(Objects.requireNonNull(front.services.util.MinorRequest.getFacultyMinors(facultyName)));
+        minorList.getItems().addAll(Objects.requireNonNull(front.services.model_handlers.MinorRequest.getFacultyMinors(facultyName)));
 
         minorList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
             registerButton.setDisable(false);
@@ -53,7 +53,7 @@ public class MinorRequest {
         String facultyName = facultyList.getSelectionModel().getSelectedItem();
         String minorName = minorList.getSelectionModel().getSelectedItem();
 
-        front.services.util.MinorRequest.requestMinor(facultyName, minorName);
+        front.services.model_handlers.MinorRequest.requestMinor(facultyName, minorName);
         responseLabel.setVisible(true);
     }
 }

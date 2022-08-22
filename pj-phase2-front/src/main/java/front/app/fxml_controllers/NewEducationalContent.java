@@ -1,7 +1,7 @@
 package front.app.fxml_controllers;
 
 import front.services.FileHandler;
-import front.services.util.EducationalContent;
+import front.services.model_handlers.EducationalContent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

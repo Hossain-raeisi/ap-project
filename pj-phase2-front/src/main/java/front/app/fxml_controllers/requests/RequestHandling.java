@@ -21,7 +21,7 @@ public class RequestHandling {
 
     @FXML
     public void initialize(){
-        RequestData requestData = front.services.util.RequestHandling.getCurrentRequestData();
+        RequestData requestData = front.services.model_handlers.RequestHandling.getCurrentRequestData();
 
         requestDescriptionLabel.setText(requestData.description);
         requestTitleLabel.setText(requestData.title);
@@ -29,11 +29,11 @@ public class RequestHandling {
 
     public void approveButtonAction(){
         String responseText = responseTextArea.getText();
-        front.services.util.RequestHandling.approveCurrentRequest(responseText);
+        front.services.model_handlers.RequestHandling.approveCurrentRequest(responseText);
     }
 
     public void disapproveButtonAction(){
         String responseText = responseTextArea.getText();
-        front.services.util.RequestHandling.disapproveCurrentRequest(responseText);
+        front.services.model_handlers.RequestHandling.disapproveCurrentRequest(responseText);
     }
 }

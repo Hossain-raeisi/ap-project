@@ -55,7 +55,7 @@ public class Messenger {
 
         activateChatMessagesUpdate();
 
-        var chatFeedData = front.services.util.Messenger.getCurrentChatFeedData();
+        var chatFeedData = front.services.model_handlers.Messenger.getCurrentChatFeedData();
         if (chatFeedData != null)
             chatFeedMembers.getItems().addAll(chatFeedData.membersId.stream().map(client::getUserData).map(ChatFeedMemberView::new).toList());
 
@@ -67,7 +67,7 @@ public class Messenger {
             protected ObservableList<ChatFeedView> call() {
                 try {
                     while (true) {
-                        var userChatFeeds = front.services.util.Messenger.getUserChatFeeds();
+                        var userChatFeeds = front.services.model_handlers.Messenger.getUserChatFeeds();
                         List<ChatFeedView> result = new ArrayList<>(userChatFeeds.stream().map(ChatFeedView::new).toList());
                         updateValue(FXCollections.observableList(result));
                         TimeUnit.SECONDS.sleep(10);
@@ -89,7 +89,7 @@ public class Messenger {
             @Override
             protected ObservableList<MessageView> call() {
                 var client = Client.getInstance();
-                var chatFeedData = front.services.util.Messenger.getCurrentChatFeedData();
+                var chatFeedData = front.services.model_handlers.Messenger.getCurrentChatFeedData();
 
                 if (chatFeedData == null) {
                     sendMessage.setVisible(false);
@@ -104,7 +104,7 @@ public class Messenger {
                     while (true) {
                         if (chatFeedData.messagesId == null) {
                             TimeUnit.SECONDS.sleep(10);
-                            chatFeedData = front.services.util.Messenger.getCurrentChatFeedData();
+                            chatFeedData = front.services.model_handlers.Messenger.getCurrentChatFeedData();
                             continue;
                         }
                         System.out.println("hello");
@@ -125,21 +125,21 @@ public class Messenger {
     }
 
     public void chatFeedSelected(UUID chatFeedId) {
-        front.services.util.Messenger.chatSelected(chatFeedId);
+        front.services.model_handlers.Messenger.chatSelected(chatFeedId);
     }
 
     public void sendMessageButtonAction(ActionEvent actionEvent) {
         var text = messageField.getText();
-        front.services.util.Messenger.sendMessage(text);
+        front.services.model_handlers.Messenger.sendMessage(text);
     }
 
     public void addAttachmentButtonAction(ActionEvent actionEvent) {
         var attachmentPath = attachmentPathField.getText();
-        front.services.util.Messenger.addAttachment(attachmentPath);
+        front.services.model_handlers.Messenger.addAttachment(attachmentPath);
     }
 
     public void newChatButtonAction(ActionEvent actionEvent) {
-        front.services.util.Messenger.showNewChatPage();
+        front.services.model_handlers.Messenger.showNewChatPage();
     }
 
 

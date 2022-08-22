@@ -22,8 +22,8 @@ public class Login {
 
     @FXML
     public void initialize() {
-//        LogIn.newCaptcha();
-//        captchaImage.setImage(LogIn.getCaptchaImage());
+        LogIn.newCaptcha();
+        captchaImage.setImage(LogIn.getCaptchaImage());
     }
 
     public void loginButtonAction(ActionEvent actionEvent) {

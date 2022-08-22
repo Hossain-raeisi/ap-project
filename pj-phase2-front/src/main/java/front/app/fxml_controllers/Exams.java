@@ -12,8 +12,8 @@ public class Exams {
 
     @FXML
     public void initialize() {
-        if (front.services.util.Exams.userExamsData != null) {
-            for (ExamData examData : front.services.util.Exams.userExamsData) {
+        if (front.services.model_handlers.Exams.userExamsData != null) {
+            for (ExamData examData : front.services.model_handlers.Exams.userExamsData) {
                 examsListView.getItems().add(new ExamView(examData));
             }
         }

@@ -15,6 +15,6 @@ public class WithdrawalRequest {
         buttonExplanationLabel.setText("your request has been recorded. checkout requests tab for more information");
         buttonExplanationLabel.setLayoutX(150);
         withdrawRequestButton.setVisible(false);
-        front.services.util.WithdrawalRequest.requestWithdrawal();
+        front.services.model_handlers.WithdrawalRequest.requestWithdrawal();
     }
 }

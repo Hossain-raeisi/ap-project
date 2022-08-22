@@ -16,6 +16,6 @@ public class DormRequest {
         buttonExplanationLabel.setText("your request has been recorded. checkout requests tab for more information");
         buttonExplanationLabel.setLayoutX(150);
         dormRequestButton.setVisible(false);
-        front.services.util.DormRequest.requestDorm();
+        front.services.model_handlers.DormRequest.requestDorm();
     }
 }

@@ -2,7 +2,7 @@ package front.app.fxml_controllers;
 
 import front.commons.data_class.StudentData;
 import front.services.Client;
-import front.services.util.EducationalStatus;
+import front.services.model_handlers.EducationalStatus;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;

@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SceneControl {
+
     public enum SceneType {
         logInPage,
         homePage,
@@ -57,13 +58,13 @@ public class SceneControl {
         newExamPage,
         newEducationalContentPage,
         educationalContentItem,
+        assignmentAnswerPage,
     }
 
     public static Map<SceneType, String> scenes = new HashMap<>();
-
     public static Stage primaryStage;
 
-    public static void changeScene(SceneType scene){
+    public static void changeScene(SceneType scene) {
         try {
             primaryStage.setScene(new Scene(new FXMLLoader(SceneControl.class.getResource(scenes.get(scene))).load()));
         } catch (IOException e) {
@@ -73,7 +74,7 @@ public class SceneControl {
         primaryStage.show();
     }
 
-    public static void loadGui(Stage primaryStage){
+    public static void loadGui(Stage primaryStage) {
         SceneControl.primaryStage = primaryStage;
         scenes.put(SceneType.logInPage, "/fxmls/login.fxml");
         changeScene(SceneType.logInPage);
@@ -88,7 +89,7 @@ public class SceneControl {
         SceneControl.primaryStage.show();
     }
 
-    public static void loadScenes(UserType user){
+    public static void loadScenes(UserType user) {
         Logger.Info("load fxmls");
 
         scenes.put(SceneType.professorsPage, "/fxmls/professors.fxml");
@@ -119,6 +120,7 @@ public class SceneControl {
         scenes.put(SceneType.courseSelectionPage, "/fxmls/courseSelection.fxml");
         scenes.put(SceneType.newExamPage, "/fxmls/newExam.fxml");
         scenes.put(SceneType.educationalContentItem, "/fxmls/educationalContentItem.fxml");
+        scenes.put(SceneType.assignmentAnswerPage, "/fxmls/assignmentAnswer.fxml");
 
         //requests
         scenes.put(SceneType.serviceExemptionRequestPage, "/fxmls/requests/serviceExemptionRequest.fxml");
@@ -134,7 +136,7 @@ public class SceneControl {
         scenes.put(SceneType.allObjectionRequestsPage, "/fxmls/requests/allObjectionRequests.fxml");
 
         //user related
-        switch (user){
+        switch (user) {
             case bachelorStudent, masterStudent, doctorateStudent ->
                     scenes.put(SceneType.homePage, "/fxmls/homePage.fxml");
             case normalProfessor, deputyEducationProfessor, facultyHeadProfessor -> {
@@ -145,5 +147,4 @@ public class SceneControl {
         }
 
     }
-
 }

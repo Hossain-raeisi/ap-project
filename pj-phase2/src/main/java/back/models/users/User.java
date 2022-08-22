@@ -65,7 +65,13 @@ public class User {
     @Column
     private String password;
 
-    ArrayList<LocalDateTime> logins = new ArrayList<>();
+    @Column(name = "second_last_login")
+    @Temporal(TemporalType.TIMESTAMP)
+    LocalDateTime secondLatLogin;
+
+    @Column(name = "last_login")
+    @Temporal(TemporalType.TIMESTAMP)
+    LocalDateTime lastLogin;
 
     @ManyToMany()
     @JoinTable(
@@ -176,14 +182,6 @@ public class User {
         assignerRequests.add(request);
     }
 
-    public LocalDateTime getLastLogIn() {
-        return logins.get(logins.size() - 2);
-    }
-
-    public void addLogIn(LocalDateTime newLogIn) {
-        logins.add(newLogIn);
-    }
-
     public List<Course> getActiveCourses() {
         return null;
     }
@@ -217,10 +215,6 @@ public class User {
         return result;
     }
 
-    public void removeLogIn() {
-        logins.remove(0);
-    }
-
     public List<Request> getAssigneeRequests() {
         return  assigneeRequests;
     }
@@ -233,13 +227,6 @@ public class User {
         this.assignerRequests = assignerRequests;
     }
 
-    public ArrayList<LocalDateTime> getLogins() {
-        return logins;
-    }
-
-    public void setLogins(ArrayList<LocalDateTime> logins) {
-        this.logins = logins;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -276,5 +263,21 @@ public class User {
 
     public List<User> getContacts() {
         throw new RuntimeException("Not implemented function");
+    }
+
+    public LocalDateTime getSecondLatLogin() {
+        return secondLatLogin;
+    }
+
+    public void setSecondLatLogin(LocalDateTime secondLatLogin) {
+        this.secondLatLogin = secondLatLogin;
+    }
+
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
     }
 }

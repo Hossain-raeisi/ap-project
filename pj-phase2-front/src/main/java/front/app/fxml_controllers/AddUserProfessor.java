@@ -7,7 +7,7 @@ import front.commons.enums.ProfessorRank;
 import front.commons.enums.ProfessorType;
 import front.services.Client;
 import front.services.security.Utils;
-import front.services.util.AddUser;
+import front.services.model_handlers.AddUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

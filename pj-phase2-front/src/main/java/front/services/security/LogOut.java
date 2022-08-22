@@ -2,7 +2,7 @@ package front.services.security;
 
 import front.app.SceneControl;
 import front.services.Client;
-import front.services.util.Clear;
+import front.services.model_handlers.Clear;
 
 public class LogOut {
 

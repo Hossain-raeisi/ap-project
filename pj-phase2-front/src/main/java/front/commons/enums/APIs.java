@@ -37,7 +37,7 @@ public enum APIs {
     data_user,
     data_userType,
     data_userWithNationalId,
-    data_userLogIns,
+    data_userLastLogin,
     data_student,
     data_students,
     data_studentNonFinalizedActiveScores,
@@ -78,5 +78,5 @@ public enum APIs {
     auth_getCaptcha,
     auth_login,
     auth_logout,
-    auth_check, data_attachment, serverStatus, data_userContacts, add_request_contact, data_userChatFeedsWithUsers, data_isStudentCourseSelectionTime, add_exam, update_educationalContent,
+    auth_check, data_attachment, serverStatus, data_userContacts, add_request_contact, data_userChatFeedsWithUsers, data_isStudentCourseSelectionTime, add_exam, update_educationalContent_details, data_assignmentAnswer, update_course_assignmentAnswer,
 }

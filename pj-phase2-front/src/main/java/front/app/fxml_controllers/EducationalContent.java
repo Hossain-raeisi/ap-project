@@ -24,9 +24,9 @@ public class EducationalContent {
     @FXML
     public void initialize() {
         var client = Client.getInstance();
-        var educationalContentData = front.services.util.EducationalContent.getEducationalContentData();
+        var educationalContentData = front.services.model_handlers.EducationalContent.getEducationalContentData();
         this.educationalContentId = educationalContentData.id;
-        var userType = front.services.util.EducationalContent.getCurrentUserType();
+        var userType = front.services.model_handlers.EducationalContent.getCurrentUserType();
 
         name.setText(educationalContentData.name);
 
@@ -39,6 +39,6 @@ public class EducationalContent {
 
 
     public void deleteButtonAction(ActionEvent actionEvent) {
-        front.services.util.EducationalContent.removeEducationalContent(educationalContentId);
+        front.services.model_handlers.EducationalContent.removeEducationalContent(educationalContentId);
     }
 }

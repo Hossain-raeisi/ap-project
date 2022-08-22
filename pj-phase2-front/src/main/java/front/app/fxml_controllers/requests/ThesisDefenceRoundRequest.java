@@ -23,6 +23,6 @@ public class ThesisDefenceRoundRequest {
         Logger.Info("new thesis defence round for user" + Client.getInstance().getCurrentUserData().nationalId);
 
         buttonExplanationLabel.setText("your round: " + LocalDateTime.now().plusDays(90).toString());
-        front.services.util.ThesisDefenceRoundRequest.requestThesisDefenceRound();
+        front.services.model_handlers.ThesisDefenceRoundRequest.requestThesisDefenceRound();
     }
 }

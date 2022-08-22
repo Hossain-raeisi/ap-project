@@ -1,10 +1,10 @@
 package front.app.fxml_controllers;
 
 import front.services.Client;
-import front.services.util.AllObjectionRequests;
-import front.services.util.CourseDescription;
-import front.services.util.ProfessorAllFinalizedScores;
-import front.services.util.TemporaryScores;
+import front.services.model_handlers.AllObjectionRequests;
+import front.services.model_handlers.CourseDescription;
+import front.services.model_handlers.ProfessorAllFinalizedScores;
+import front.services.model_handlers.TemporaryScores;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

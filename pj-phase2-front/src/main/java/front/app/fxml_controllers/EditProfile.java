@@ -4,7 +4,7 @@ import front.app.Util;
 import front.commons.data_class.UserData;
 import front.services.Client;
 import front.services.Logger;
-import front.services.util.Profile;
+import front.services.model_handlers.Profile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

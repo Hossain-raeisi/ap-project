@@ -8,7 +8,7 @@ import front.commons.enums.UserType;
 import front.commons.gson.CustomGson;
 import front.services.security.Control;
 
-import java.io.IOException;
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -25,10 +25,10 @@ import java.util.concurrent.TimeUnit;
 public class Client {
     private static final String baseAddress = Config.SERVER_ADDRESS;
     private static final HashMap<APIs, String> urls = new HashMap<>();
+    static volatile boolean ONLINE;
     private static Client client;
     private static Gson gson;
-    private HttpClient httpClient;
-    static volatile boolean ONLINE;
+    HttpClient httpClient;
 
     private Client() {
         httpClient = HttpClient.newHttpClient();
@@ -86,7 +86,9 @@ public class Client {
         urls.put(APIs.update_course_details, baseAddress + "/update/course/details");
         urls.put(APIs.update_course_addTAs, baseAddress + "/update/course/addTAs");
         urls.put(APIs.update_course_addStudents, baseAddress + "/update/course/addStudents");
-        urls.put(APIs.update_educationalContent, baseAddress + "/update/course/educationalContent");
+        urls.put(APIs.update_educationalContent_details, baseAddress + "/update/educationalContent/details");
+        urls.put(APIs.update_course_assignmentAnswer, baseAddress + "/update/course/assignmentAnswer");
+
 
         urls.put(APIs.update_request_finalize, baseAddress + "/update/request/finalize");
         urls.put(APIs.update_professor_details, baseAddress + "/update/professor/details");
@@ -98,7 +100,7 @@ public class Client {
         urls.put(APIs.data_user, baseAddress + "/data/user");
         urls.put(APIs.data_userType, baseAddress + "/data/userType");
         urls.put(APIs.data_userWithNationalId, baseAddress + "/data/userWithNationalId");
-        urls.put(APIs.data_userLogIns, baseAddress + "/data/userLogIns");
+        urls.put(APIs.data_userLastLogin, baseAddress + "/data/userLastLogin");
         urls.put(APIs.data_userActiveCourses, baseAddress + "/data/userActiveCourses");
         urls.put(APIs.data_userContacts, baseAddress + "/data/userContacts");
 
@@ -117,6 +119,7 @@ public class Client {
         urls.put(APIs.data_courseScoring, baseAddress + "/data/courseScoring");
         urls.put(APIs.data_courseAssignment, baseAddress + "/data/courseAssignment");
         urls.put(APIs.data_assignment, baseAddress + "/data/getAssignment");
+        urls.put(APIs.data_assignmentAnswer, baseAddress + "/data/getAssignmentAnswer");
         urls.put(APIs.data_assignmentAnswers, baseAddress + "/data/getAssignmentAnswers");
         urls.put(APIs.data_educationalContent, baseAddress + "/data/educationalContent");
         urls.put(APIs.data_exam, baseAddress + "/data/exam");
@@ -151,22 +154,30 @@ public class Client {
 
     public HttpResponse<String> sendRequest(APIs api, HttpRequest.Builder requestBuilder) {
         try {
+            Logger.Info("calling server on: " + api.toString());
             return httpClient.send(requestBuilder.uri(URI.create(urls.get(api))).build(),
                     HttpResponse.BodyHandlers.ofString());
+        } catch (ConnectException connectException) {
+            ONLINE = false;
         } catch (Exception e) {
             e.printStackTrace();
+            Logger.Error(e.getMessage());
         }
         return null;
     }
 
     public HttpResponse<String> sendSecureRequest(APIs api, HttpRequest.Builder requestBuilder) {
         try {
+            Logger.Info("calling server on: " + api.toString());
             return httpClient.send(Control.addSecurityHeaders(
                             requestBuilder.uri(URI.create(urls.get(api)))
                     ).build(),
                     HttpResponse.BodyHandlers.ofString());
+        } catch (ConnectException connectException) {
+            ONLINE = false;
         } catch (Exception e) {
             e.printStackTrace();
+            Logger.Error(e.getMessage());
         }
         return null;
     }
@@ -182,11 +193,9 @@ public class Client {
             Control.authToken = String.valueOf(response.headers().firstValue("auth-token").stream().toArray()[0]);
             Control.userId = UUID.fromString(String.valueOf(response.headers().firstValue("user-id").stream().toArray()[0]));
 
-            if (Control.authToken == null || Control.authToken.equals(""))
-                return false;
-
-            return true;
-        } catch (Exception ignored) {}
+            return Control.authToken != null && !Control.authToken.equals("");
+        } catch (Exception ignored) {
+        }
 
         return false;
     }
@@ -406,7 +415,7 @@ public class Client {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(courseData))
         );
-        var response = sendSecureRequest(APIs.add_course, request);
+        sendSecureRequest(APIs.add_course, request);
     }
 
     public void removeCourse(String courseId) {
@@ -432,8 +441,8 @@ public class Client {
 
         HttpResponse<String> response;
         if (ONLINE) {
-             response = sendSecureRequest(APIs.data_weekly_plan, request);
-             Cache.addSingletonResponseToCache(APIs.data_weekly_plan, response);
+            response = sendSecureRequest(APIs.data_weekly_plan, request);
+            Cache.addSingletonResponseToCache(APIs.data_weekly_plan, response);
         } else {
             response = Cache.getCachedSingletonResponse(APIs.data_weekly_plan);
         }
@@ -468,7 +477,18 @@ public class Client {
 
     public UserType getUserType(UUID userId) {
         var request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(userId.toString()));
-        var response = sendSecureRequest(APIs.data_userType, request);
+
+        HttpResponse<String> response = null;
+        if (ONLINE) {
+            response = sendSecureRequest(APIs.data_userType, request);
+            if (userId.equals(Control.userId))
+                Cache.addSingletonResponseToCache(APIs.data_userType, response);
+
+        } else {
+            if (userId.equals(Control.userId))
+                response = Cache.getCachedSingletonResponse(APIs.data_userType);
+        }
+
         return gson.fromJson(response.body(), UserType.class);
     }
 
@@ -514,7 +534,18 @@ public class Client {
 
     public UserData getUserData(UUID userId) {
         var request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(userId.toString()));
-        var response = sendSecureRequest(APIs.data_user, request);
+
+        HttpResponse<String> response = null;
+        if (ONLINE) {
+            response = sendSecureRequest(APIs.data_user, request);
+            if (userId.equals(Control.userId))
+                Cache.addSingletonResponseToCache(APIs.data_user, response);
+
+        } else {
+            if (userId.equals(Control.userId))
+                response = Cache.getCachedSingletonResponse(APIs.data_user);
+        }
+
         return gson.fromJson(response.body(), UserData.class);
     }
 
@@ -541,29 +572,26 @@ public class Client {
         sendSecureRequest(APIs.add_request_objection, request);
     }
 
-    public ArrayList<LocalDateTime> getUserLogIns(UUID userId) {
-        var request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(userId.toString()));
-        var response = sendSecureRequest(APIs.data_userLogIns, request);
-        return new ArrayList<>(Arrays.asList(gson.fromJson(response.body(), LocalDateTime[].class)));
-    }
-
     public LocalDateTime getUserLastLogIn(UUID id) {
-        // TODO
-        return null;
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(id.toString())
+        );
+        var response = sendSecureRequest(APIs.data_userLastLogin, request);
+        return gson.fromJson(response.body(), LocalDateTime.class);
     }
 
     public void addStudentToCourse(AddStudentsData addStudentsData) {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(addStudentsData))
         );
-        var response = sendSecureRequest(APIs.update_course_addStudents, request);
+        sendSecureRequest(APIs.update_course_addStudents, request);
     }
 
     public void addTAToCourse(AddStudentsData addTAsData) {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(addTAsData))
         );
-        var response = sendSecureRequest(APIs.update_course_addTAs, request);
+        sendSecureRequest(APIs.update_course_addTAs, request);
     }
 
     public AssignmentData getAssignmentData(UUID assignmentId) {
@@ -605,7 +633,7 @@ public class Client {
 
     public void removeEducationalData(UUID educationalContentId) {
         var request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(educationalContentId.toString()));
-        var response = sendSecureRequest(APIs.remove_educationalContent, request);
+        sendSecureRequest(APIs.remove_educationalContent, request);
     }
 
     public MessageData getMessageData(UUID messageId) {
@@ -654,7 +682,7 @@ public class Client {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(messageData))
         );
-        var response = sendSecureRequest(APIs.add_message, request);
+        sendSecureRequest(APIs.add_message, request);
     }
 
     public ArrayList<UUID> getCurrentUserContacts() {
@@ -677,7 +705,11 @@ public class Client {
     public void checkServerStatus() {
         var request = HttpRequest.newBuilder().GET();
         var response = sendRequest(APIs.serverStatus, request);
-        ONLINE = response.body().equals("online");
+        try {
+            ONLINE = response.body().equals("online");
+        } catch (Exception ignored) {
+            ONLINE = false;
+        }
     }
 
     public Boolean isStudentCourseSelectionTime() {
@@ -690,20 +722,50 @@ public class Client {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(examData))
         );
-        var response = sendSecureRequest(APIs.add_exam, request);
+        sendSecureRequest(APIs.add_exam, request);
     }
 
     public void addEducationalContent(EducationalContentData educationalContentData) {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(educationalContentData))
         );
-        var response = sendSecureRequest(APIs.add_educationalContent, request);
+        sendSecureRequest(APIs.add_educationalContent, request);
     }
 
     public void updateEducationalContent(EducationalContentData educationalContentData) {
         var request = HttpRequest.newBuilder().POST(
                 HttpRequest.BodyPublishers.ofString(gson.toJson(educationalContentData))
         );
-        var response = sendSecureRequest(APIs.update_educationalContent, request);
+        sendSecureRequest(APIs.update_educationalContent_details, request);
+    }
+
+    public ArrayList<AssignmentAnswerData> getAssignmentAnswers(UUID assignmentId) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(assignmentId.toString())
+        );
+        var response = sendSecureRequest(APIs.data_assignmentAnswers, request);
+        return new ArrayList<>(Arrays.asList(gson.fromJson(response.body(), AssignmentAnswerData[].class)));
+    }
+
+    public void addAssignmentAnswer(AssignmentAnswerData assignmentAnswerData) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(gson.toJson(assignmentAnswerData))
+        );
+        sendSecureRequest(APIs.add_assignmentAnswer, request);
+    }
+
+    public AssignmentAnswerData getAssignmentAnswerData(UUID assignmentAnswerId) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(assignmentAnswerId.toString())
+        );
+        var response = sendSecureRequest(APIs.data_assignmentAnswer, request);
+        return gson.fromJson(response.body(), AssignmentAnswerData.class);
+    }
+
+    public void updateAssignmentAnswer(AssignmentAnswerData assignmentAnswerData) {
+        var request = HttpRequest.newBuilder().POST(
+                HttpRequest.BodyPublishers.ofString(gson.toJson(assignmentAnswerData))
+        );
+        sendSecureRequest(APIs.update_course_assignmentAnswer, request);
     }
 }

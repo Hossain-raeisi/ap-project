@@ -1,0 +1,16 @@
+2022-08-22T22:51:01.366675699 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T22:51:01.367353887 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T22:58:30.042879056 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T22:58:30.043347339 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T22:58:53.418450944 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T22:58:53.418677381 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:00:14.565269646 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:00:14.565874517 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:00:22.741530975 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:00:22.741763463 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:10:28.104670261 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:10:28.105286242 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:17:39.978709761 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:17:39.979355087 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200
+2022-08-22T23:18:42.331304414 Info successful LogIn attempt for user:b7e5a843-20d2-40a8-afe0-3fac497c473d
+2022-08-22T23:18:42.331556228 Info user successful login. user id: b7e5a843-20d2-40a8-afe0-3fac497c473dresponse status: 200

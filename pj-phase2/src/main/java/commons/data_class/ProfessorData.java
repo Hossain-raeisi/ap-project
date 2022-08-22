@@ -6,7 +6,7 @@ import commons.enums.ProfessorType;
 import java.util.UUID;
 
 public class ProfessorData extends UserData {
-    public int roomNumber;
+    public Integer roomNumber;
     public String professorNumber;
     public ProfessorType type;
     public ProfessorRank rank;

@@ -1,0 +1,3 @@
+SERVER_PORT: 5555
+BASE_FILES_PATH: "src/main/resources/files/"
+LOGS_FILE_PATH: "src/main/resources/info/logs.txt"

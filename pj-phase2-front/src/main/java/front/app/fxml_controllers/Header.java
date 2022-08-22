@@ -4,12 +4,12 @@ import front.commons.data_class.UserData;
 import front.app.Util;
 import front.services.Client;
 import front.services.security.LogOut;
-import front.services.util.CourseSelection;
-import front.services.util.Messenger;
-import front.services.util.ProfessorCourses;
-import front.services.util.Profile;
-import front.services.util.WeeklyPlan;
-import front.services.util.*;
+import front.services.model_handlers.CourseSelection;
+import front.services.model_handlers.Messenger;
+import front.services.model_handlers.ProfessorCourses;
+import front.services.model_handlers.Profile;
+import front.services.model_handlers.WeeklyPlan;
+import front.services.model_handlers.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -205,11 +205,11 @@ public class Header {
     }
 
     public void professorsMenuItemAction(ActionEvent ignoredActionEvent) {
-        front.services.util.Professors.showAllProfessors();
+        front.services.model_handlers.Professors.showAllProfessors();
     }
 
     public void coursesMenuItemAction(ActionEvent ignoredActionEvent) {
-        front.services.util.Courses.showAllCourses();
+        front.services.model_handlers.Courses.showAllCourses();
     }
 
     public void weeklyPlanMenuItemAction(ActionEvent ignoredActionEvent) {
@@ -217,7 +217,7 @@ public class Header {
     }
 
     public void examsMenuItemAction(ActionEvent ignoredActionEvent) {
-        front.services.util.Exams.showUserExams();
+        front.services.model_handlers.Exams.showUserExams();
     }
 
     public void recommendationRequestMenuItemAction(ActionEvent actionEvent) {

@@ -13,8 +13,8 @@ public class ServiceExemptionRequest {
     Label responseLabel;
 
     public void requestButtonAction(ActionEvent ignoredActionEvent) {
-        front.services.util.ServiceExemptionRequest.requestServiceExemption();
-        changeLabelText(front.services.util.ServiceExemptionRequest.serviceExemptionResponse);
+        front.services.model_handlers.ServiceExemptionRequest.requestServiceExemption();
+        changeLabelText(front.services.model_handlers.ServiceExemptionRequest.serviceExemptionResponse);
     }
 
     public void changeLabelText(String text){

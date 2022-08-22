@@ -13,7 +13,7 @@ public class CourseData {
     public UUID professorId;
     public CourseLevel level;
     public String name;
-    public int size;
+    public Integer size;
     public String time;
     public Boolean temporaryScoresSet;
     public Boolean archived;

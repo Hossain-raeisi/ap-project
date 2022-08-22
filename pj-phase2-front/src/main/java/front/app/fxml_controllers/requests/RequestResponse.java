@@ -15,7 +15,7 @@ public class RequestResponse {
 
     @FXML
     public void initialize(){
-        RequestData requestData = front.services.util.RequestResponse.getCurrentRequestData();
+        RequestData requestData = front.services.model_handlers.RequestResponse.getCurrentRequestData();
 
         requestDescriptionLabel.setText(requestData.description);
         requestTitleLabel.setText(requestData.title);

@@ -2,7 +2,7 @@ package front.app.fxml_controllers;
 
 import front.app.views.CourseView;
 import front.commons.data_class.CourseData;
-import front.services.util.Course;
+import front.services.model_handlers.Course;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -13,7 +13,7 @@ public class MyCourses {
     ListView<CourseView> courses;
 
     public void initialize() {
-        for (CourseData courseData : front.services.util.CW.getCoursesData()) {
+        for (CourseData courseData : front.services.model_handlers.CW.getCoursesData()) {
             courses.getItems().add((new CourseView(courseData)));
         }
 

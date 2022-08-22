@@ -6,8 +6,8 @@ import front.commons.enums.ProfessorRank;
 import front.commons.enums.UserType;
 import front.app.views.ProfessorView;
 import front.services.Client;
-import front.services.util.AddUser;
-import front.services.util.EditUserProfessor;
+import front.services.model_handlers.AddUser;
+import front.services.model_handlers.EditUserProfessor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -47,7 +47,7 @@ public class Professors {
         var client = Client.getInstance();
         var userData = client.getCurrentUserData();
 
-        for (ProfessorData professorData : front.services.util.Professors.professorsData) {
+        for (ProfessorData professorData : front.services.model_handlers.Professors.professorsData) {
             profs.getItems().add(new ProfessorView(professorData));
         }
 
@@ -76,7 +76,7 @@ public class Professors {
         String facultyFilterString = facultyFilterField.getText();
 
         if (nameFilter.equals("") && rankFilterString.equals("") && facultyFilterString.equals("")) {
-            front.services.util.Professors.showAllProfessors();
+            front.services.model_handlers.Professors.showAllProfessors();
             return;
         }
 
@@ -94,7 +94,7 @@ public class Professors {
         if (facultyFilterString.equals(""))
             facultyFilterString = null;
 
-        front.services.util.Professors.showFilteredProfessors(new ProfessorFilter(nameFilter,
+        front.services.model_handlers.Professors.showFilteredProfessors(new ProfessorFilter(nameFilter,
                 rankFilter,
                 facultyFilterString));
     }
@@ -111,12 +111,12 @@ public class Professors {
 
     public void addProfessorButtonAction() {
         AddUser.showPage("professor");
-        front.services.util.Professors.showAllProfessors();
+        front.services.model_handlers.Professors.showAllProfessors();
     }
 
     public void delProfessorButtonAction() {
-        front.services.util.Professors.removeProfessor(professorIdField.getText());
-        front.services.util.Professors.showAllProfessors();
+        front.services.model_handlers.Professors.removeProfessor(professorIdField.getText());
+        front.services.model_handlers.Professors.showAllProfessors();
     }
 
     public void addDeputyEducation(ActionEvent actionEvent) {
@@ -125,7 +125,7 @@ public class Professors {
 
         facultyData.deputyEducationProfessorId = UUID.fromString(deputyProfessorIdField.getText());
         Client.getInstance().updateFaculty(facultyData);
-        front.services.util.Professors.showAllProfessors();
+        front.services.model_handlers.Professors.showAllProfessors();
     }
 
     public void removeDeputyEducation(ActionEvent actionEvent) {
@@ -135,6 +135,6 @@ public class Professors {
         facultyData.deputyEducationProfessorId = null;
         facultyData.deputyEducationProfessorName = null;
 
-        front.services.util.Professors.showAllProfessors();
+        front.services.model_handlers.Professors.showAllProfessors();
     }
 }

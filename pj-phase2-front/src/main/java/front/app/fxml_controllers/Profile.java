@@ -5,7 +5,7 @@ import front.commons.data_class.StudentData;
 import front.commons.data_class.UserData;
 import front.app.Util;
 import front.services.Client;
-import front.services.util.EditProfile;
+import front.services.model_handlers.EditProfile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -89,7 +89,7 @@ public class Profile {
 
     public void changeThemeButtonAction(ActionEvent ignoredActionEvent) {
         Header.changeTheme();
-        front.services.util.Profile.showPage();
+        front.services.model_handlers.Profile.showPage();
     }
 
     public void editButtonAction(ActionEvent ignoredActionEvent) {

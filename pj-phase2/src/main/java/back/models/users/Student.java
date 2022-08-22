@@ -31,7 +31,7 @@ public class Student extends User {
     List<Score> passedScores;
 
     @Column
-    Float totalGradePointAverage;
+    Double totalGradePointAverage;
 
     @Column
     int staringYear;
@@ -69,11 +69,11 @@ public class Student extends User {
         this.supervisorProfessor = supervisorProfessor;
     }
 
-    public Float getTotalGradePointAverage() {
+    public Double getTotalGradePointAverage() {
         return totalGradePointAverage;
     }
 
-    public void setTotalGradePointAverage(Float totalGradePointAverage) {
+    public void setTotalGradePointAverage(Double totalGradePointAverage) {
         this.totalGradePointAverage = totalGradePointAverage;
     }
 
@@ -173,5 +173,19 @@ public class Student extends User {
         result.add(supervisorProfessor);
 
         return result;
+    }
+
+    public void updateTotalGradePointAverage() {
+        Integer passedCoursesTotalSize = 0;
+        Double scoresTotalWeightedSum = 0.0;
+
+        for (var score: passedScores) {
+            var course = score.getCourse();
+
+            passedCoursesTotalSize += course.getSize();
+            scoresTotalWeightedSum += course.getSize() * score.getFinalScore();
+        }
+
+        totalGradePointAverage = scoresTotalWeightedSum / passedCoursesTotalSize;
     }
 }

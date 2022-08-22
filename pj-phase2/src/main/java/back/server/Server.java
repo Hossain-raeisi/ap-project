@@ -22,6 +22,7 @@ import commons.enums.UserType;
 import commons.gson.CustomGson;
 import spark.Response;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -113,7 +114,7 @@ public class Server {
                 post("/user", Server::getUser);
                 post("/userType", Server::getUserType);
                 post("/userWithNationalId", Server::getUserWithNationalId);
-                post("/userLogIns", Server::getUserLogIns);
+                post("/userLastLogin", Server::getUserLastLogin);
                 post("/userActiveCourses", Server::getUserActiveCourses);
                 post("/userContacts", Server::getUserContacts);
 
@@ -158,7 +159,6 @@ public class Server {
                     post("/professors", Server::getFilteredProfessors);
                     post("/courses", Server::getFilteredCourses);
                     get("/userExams", Server::getUserActiveExams);
-                    post("/scores", Server::getFilteredScores);
                     post("/facultyMinors", Server::getFacultyMinors);
                     post("/requests", Server::getFilteredRequests);
                 });
@@ -425,6 +425,11 @@ public class Server {
         if (user.getPassword().equals(logInData.hashedPassword)) {
             Logger.Info("successful LogIn attempt for user:" + user.getId());
 
+            DataBase.entityManager.getTransaction().begin();
+            user.setSecondLatLogin(user.getLastLogin());
+            user.setLastLogin(LocalDateTime.now());
+            DataBase.entityManager.getTransaction().commit();
+
             activeAuthTokenToUserId.put(authToken, user.getId());
 
             response.header("auth-token", authToken);
@@ -539,14 +544,6 @@ public class Server {
         return response.body();
     }
 
-    public static String getFilteredScores(spark.Request request, Response response) {
-        ScoreFilter scoreFilter = gson.fromJson(request.body(), ScoreFilter.class);
-        List<Score> scores = DataBase.getFilteredScores(scoreFilter);
-        List<ScoreData> scoresData = scores.stream().map(RawDataHandler::getScoreData).collect(Collectors.toList());
-        response.body(gson.toJson(scoresData));
-        return response.body();
-    }
-
     public static String getAllFaculties(spark.Request request, Response response) {
         List<Faculty> faculties = (List<Faculty>) DataBase.entityManager.
                 createNativeQuery("SELECT * FROM faculty", Faculty.class).getResultList();
@@ -589,7 +586,6 @@ public class Server {
      * @return captcha number and url to it's picture in body
      */
     public static String getCaptcha(spark.Request request, Response response) {
-        // TODO : some validation that it came from client or some rate for each ip
         Captcha captcha = Util.getACaptcha();
         CaptchaData captchaData = RawDataHandler.getCaptchaData(captcha);
         response.body(gson.toJson(captchaData));
@@ -833,9 +829,9 @@ public class Server {
     /**
      * takes userId in body
      */
-    private static String getUserLogIns(spark.Request request, Response response) {
+    private static String getUserLastLogin(spark.Request request, Response response) {
         var user = DataBase.entityManager.find(User.class, UUID.fromString(request.body()));
-        response.body(gson.toJson(user.getLogins()));
+        response.body(gson.toJson(user.getSecondLatLogin()));
         return response.body();
     }
 

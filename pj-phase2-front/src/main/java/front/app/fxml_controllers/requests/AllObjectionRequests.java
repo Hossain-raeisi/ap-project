@@ -2,7 +2,7 @@ package front.app.fxml_controllers.requests;
 
 import front.commons.data_class.RequestData;
 import front.app.views.RequestView;
-import front.services.util.RequestResponse;
+import front.services.model_handlers.RequestResponse;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -15,7 +15,7 @@ public class AllObjectionRequests {
 
     @FXML
     public void initialize(){
-        for (RequestData requestData: front.services.util.AllObjectionRequests.getAllObjectionRequests()) {
+        for (RequestData requestData: front.services.model_handlers.AllObjectionRequests.getAllObjectionRequests()) {
             objectionsListView.getItems().add(new RequestView(requestData));
         }
 

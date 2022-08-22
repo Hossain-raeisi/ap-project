@@ -30,12 +30,12 @@ public class LogIn {
 
         if (client.logIn(idNumber, password)){
             SceneControl.loadScenes(client.getUserType(client.getCurrentUserData().id));
-            var userLogIns = client.getUserLogIns(client.getCurrentUserData().id);
-//            if (userLogIns.get(userLogIns.size() - 2).isBefore(LocalDateTime.now().minusSeconds(passwordChangeTimeDeltaInSeconds))) {
-//                SceneControl.changeScene(SceneControl.SceneType.changePasswordPage);
-//            } else {
+            var userLastLogin = client.getUserLastLogIn(client.getCurrentUserData().id);
+            if (userLastLogin.isBefore(LocalDateTime.now().minusSeconds(passwordChangeTimeDeltaInSeconds))) {
+                SceneControl.changeScene(SceneControl.SceneType.changePasswordPage);
+            } else {
                 SceneControl.changeScene(SceneControl.SceneType.homePage);
-//            }
+            }
         }
     }
 

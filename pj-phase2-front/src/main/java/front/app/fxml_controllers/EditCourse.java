@@ -30,7 +30,7 @@ public class EditCourse {
 
 
     public void editCourseButtonAction(ActionEvent ignoredActionEvent) {
-        CourseData courseData = front.services.util.EditCourse.getCurrentCourseData();
+        CourseData courseData = front.services.model_handlers.EditCourse.getCurrentCourseData();
         Client client = Client.getInstance();
 
         String name = nameField.getText();
@@ -74,6 +74,6 @@ public class EditCourse {
 
         client.updateCourse(courseData);
 
-        front.services.util.Courses.showAllCourses();
+        front.services.model_handlers.Courses.showAllCourses();
     }
 }
